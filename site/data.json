@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T03:25:00Z",
+    "lastUpdated": "2026-11-13T04:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 2,
+    "updateCount": 3,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "major",
     "label": "障害継続中（一部回復）",
-    "headline": "Microsoft 365 の世界規模の接続障害は 10 時間を超えて継続。隔離した再起動で「良い結果」が出始めたが、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の世界規模の接続障害は発生から 12 時間を超えて継続。隔離した再起動で回復の兆しはあるが、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
@@ -40,6 +40,16 @@
       "state": "サービス低下（調査・復旧中）",
       "startedAt": "2026-11-12T18:26:00Z",
       "scope": "任意のリージョンのユーザーで Microsoft 365 サービスへの接続に影響の可能性。基盤の一部で複数リージョンにまたがる高負荷が発生。"
+    },
+    {
+      "id": "TM1550488",
+      "service": "Microsoft Teams",
+      "title": "Users may experience issues when accessing or using Microsoft Teams functionality in North America",
+      "titleJa": "北米で Microsoft Teams の機能を利用できない場合がある（先行した別件）",
+      "classification": "インシデント",
+      "state": "解決済み",
+      "startedAt": "2026-11-12T15:40:00Z",
+      "scope": "北米。MO1550821 より前に発生し、02:09（日本時間）に解決を宣言。今回の大規模障害との関係は公表されていない。"
     }
   ],
   "services": [
@@ -53,7 +63,7 @@
       "name": "Microsoft Teams",
       "group": "コア",
       "state": "impacted",
-      "note": "接続障害で一部機能が使えない。別件の北米 Teams 障害が先行"
+      "note": "10時台の案内ではチャット・会議は大部分が利用可能、予定表などに不具合（報道）。北米の先行障害 TM1550488 は解決済み"
     },
     {
       "name": "SharePoint Online",
@@ -258,6 +268,22 @@
       "url": "https://gizmodo.com/microsoft-365-outage-stretches-late-into-the-evening-with-services-like-outlook-and-teams-still-unstable-2000839374",
       "ja": "Microsoft が、回復しつつある地域のトラフィックを支えるため、可能な範囲で処理能力を追加していると発表したと報道（国内報道は 11:09、米報道は米東部 21:30 頃としており時刻に差がある）。",
       "en": ""
+    },
+    {
+      "t": "2026-11-12T15:40:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120904489209143320",
+      "ja": "【先行した別件】北米で Microsoft Teams の機能へのアクセス・利用に問題が出ているという報告を調査中（TM1550488）。",
+      "en": "We're investigating reports of users experiencing issues when accessing or using Microsoft Teams functionality in North America, and more details can be found in the Microsoft 365 admin center under TM1550488."
+    },
+    {
+      "t": "2026-11-12T17:09:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120926975690744054",
+      "ja": "【先行した別件】TM1550488：緩和策によりサービスの正常性と機能が回復し、顧客への影響は完全に解消。Microsoft は今回の大規模障害との関係を示していない。",
+      "en": "Our mitigative actions have successfully restored service health and functionality. Customer impact is now fully resolved. Additional information can be found under TM1550488 in the Microsoft 365 admin center."
     }
   ],
   "cause": {
@@ -390,6 +416,11 @@
       "label": "Gizmodo：Microsoft 365 Outage Stretches Late Into the Evening",
       "url": "https://gizmodo.com/microsoft-365-outage-stretches-late-into-the-evening-with-services-like-outlook-and-teams-still-unstable-2000839374",
       "kind": "press"
+    },
+    {
+      "label": "日経クロステック：Microsoft 365大規模障害、復旧難航",
+      "url": "https://xtech.nikkei.com/atcl/nxt/news/24/03467/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -400,6 +431,10 @@
     {
       "t": "2026-11-13T03:25:00Z",
       "text": "10:59 の公式更新（隔離した再起動で良い結果、安定性を監視中）と、処理能力追加の報道を追加。全面復旧の宣言はなし"
+    },
+    {
+      "t": "2026-11-13T04:25:00Z",
+      "text": "10:59 以降、MO1550821／EX1550543 に新しい公式発表は確認できず。先行した北米 Teams 障害 TM1550488（解決済み）の公式投稿 2 件と、Teams の利用状況（報道）を追加"
     }
   ]
 }
