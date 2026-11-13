@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T09:25:00Z",
+    "lastUpdated": "2026-11-13T10:30:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 8,
+    "updateCount": 9,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "partial",
     "label": "障害継続中（回復傾向）",
-    "headline": "Microsoft 365 の接続障害は発生から 16 時間。認証・ルーティング部品への修正で安定性が改善し、業務時間帯のリージョンから順に展開中。全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の接続障害は発生から 17 時間超。修正の展開で安定化の兆候が出ているが、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
@@ -356,6 +356,14 @@
       "url": "https://x.com/NTTeastofficial/status/2121036002521489605",
       "ja": "NTT東日本が、Microsoft 365 の障害により 116、113 などのサービスや各種受付・問い合わせの一部に影響が出ていると発表。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T09:55:00Z",
+      "kind": "press",
+      "source": "報道（窓の杜）",
+      "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2156298.html",
+      "ja": "18:55 時点で安定化の兆候はあるが完全復旧には至っていない。復旧中にやり取りされたメールを保全する措置も取られていると報道。",
+      "en": ""
     }
   ],
   "cause": {
@@ -416,6 +424,10 @@
     {
       "who": "管理者",
       "text": "MO1550821 の「詳細情報」欄で、自組織が使う機能（Intune、Purview DLP、Power BI のエクスポートなど）が影響一覧に含まれるか照合する"
+    },
+    {
+      "who": "全員",
+      "text": "障害中に送受信したメールは、復旧後に遅れて届く場合がある（Microsoft がメールの保全措置を取っていると報道）。重要なメールは復旧後に届いたか相手と確認する"
     },
     {
       "who": "管理者",
@@ -540,6 +552,11 @@
       "label": "TokenPost：Microsoft Says Patch Begins Improving Stability",
       "url": "https://www.tokenpost.com/news/technology/56461",
       "kind": "press"
+    },
+    {
+      "label": "窓の杜：「Microsoft 365」の障害、発生から12時間を突破【18:55追記】",
+      "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2156298.html",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -574,6 +591,10 @@
     {
       "t": "2026-11-13T09:25:00Z",
       "text": "MO1550821 の更新 2 件（認証・ルーティング部品への修正で安定性改善、業務時間帯のリージョンから展開拡大）を報道経由で追加。国内影響に政府基盤 GSS と NTT東日本を追加。Teams の主要機能は大半が影響なしと反映"
+    },
+    {
+      "t": "2026-11-13T10:30:00Z",
+      "text": "17:06 以降、新しい公式発表は確認できず。18:55 時点で安定化の兆候はあるが完全復旧前、メール保全措置ありとの報道を追加。対応欄に復旧後のメール確認を追加"
     }
   ]
 }
