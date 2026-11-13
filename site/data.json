@@ -1,19 +1,19 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T02:17:00Z",
+    "lastUpdated": "2026-11-13T03:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 1,
+    "updateCount": 2,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "major",
     "label": "障害継続中（一部回復）",
-    "headline": "Microsoft 365 で世界規模の接続障害。サーバーの一部は復帰したが、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の世界規模の接続障害は 10 時間を超えて継続。隔離した再起動で「良い結果」が出始めたが、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
-      "一部のサーバーはサービスに復帰しましたが、Microsoft は「復帰したサーバーがトラフィックを受けると再び応答しなくなる場合がある」としており、トラフィック種別の制限や旧構成での再構築を並行して進めています。",
-      "最新の公式更新（10:01 日本時間）では影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。"
+      "一部のサーバーはサービスに復帰しましたが、Microsoft は「復帰したサーバーがトラフィックを受けると再び応答しなくなる場合がある」としていました。10:59（日本時間）の公式更新では、基盤を隔離した形で再起動する方法で「良い結果が出ている」とし、安定性を確認したうえで対応を広げる方針です。その後、回復中の地域向けに処理能力を追加していると報じられています。",
+      "10:01（日本時間）の公式更新で影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。"
     ],
     "startedAt": "2026-11-12T16:17:00Z",
     "resolvedAt": null,
@@ -43,19 +43,84 @@
     }
   ],
   "services": [
-    { "name": "Exchange Online / Outlook", "group": "コア", "state": "impacted", "note": "メール送受信・メールボックス接続。障害の中心" },
-    { "name": "Microsoft Teams", "group": "コア", "state": "impacted", "note": "接続障害で一部機能が使えない。別件の北米 Teams 障害が先行" },
-    { "name": "SharePoint Online", "group": "コア", "state": "impacted", "note": "" },
-    { "name": "Microsoft 365 Copilot", "group": "コア", "state": "impacted", "note": "" },
-    { "name": "Microsoft Planner", "group": "コア", "state": "impacted", "note": "影響一覧に追加" },
-    { "name": "Microsoft To Do", "group": "コア", "state": "impacted", "note": "影響一覧に追加" },
-    { "name": "Microsoft Defender XDR", "group": "セキュリティ", "state": "impacted", "note": "" },
-    { "name": "Defender for Office 365", "group": "セキュリティ", "state": "impacted", "note": "Safe Links が URL を検証できない場合がある（報道）" },
-    { "name": "Microsoft Intune", "group": "管理", "state": "impacted", "note": "10:01 の改訂で追加" },
-    { "name": "Microsoft Purview（一部）", "group": "コンプライアンス", "state": "impacted", "note": "認可、自動ラベル付け、DLP、コミュニケーション コンプライアンス、データ分類" },
-    { "name": "Power BI（一部）", "group": "分析", "state": "impacted", "note": "秘密度ラベル付きレポートの PDF エクスポートが断続的に失敗" },
-    { "name": "Microsoft 365 Apps 管理センター（一部）", "group": "管理", "state": "impacted", "note": "Cloud Update、Cloud Policy、Inventory" },
-    { "name": "Azure", "group": "クラウド基盤", "state": "unknown", "note": "今回の障害で Azure 側の障害は公表されていない" }
+    {
+      "name": "Exchange Online / Outlook",
+      "group": "コア",
+      "state": "impacted",
+      "note": "メール送受信・メールボックス接続。障害の中心"
+    },
+    {
+      "name": "Microsoft Teams",
+      "group": "コア",
+      "state": "impacted",
+      "note": "接続障害で一部機能が使えない。別件の北米 Teams 障害が先行"
+    },
+    {
+      "name": "SharePoint Online",
+      "group": "コア",
+      "state": "impacted",
+      "note": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "group": "コア",
+      "state": "impacted",
+      "note": ""
+    },
+    {
+      "name": "Microsoft Planner",
+      "group": "コア",
+      "state": "impacted",
+      "note": "影響一覧に追加"
+    },
+    {
+      "name": "Microsoft To Do",
+      "group": "コア",
+      "state": "impacted",
+      "note": "影響一覧に追加"
+    },
+    {
+      "name": "Microsoft Defender XDR",
+      "group": "セキュリティ",
+      "state": "impacted",
+      "note": ""
+    },
+    {
+      "name": "Defender for Office 365",
+      "group": "セキュリティ",
+      "state": "impacted",
+      "note": "Safe Links が URL を検証できない場合がある（報道）"
+    },
+    {
+      "name": "Microsoft Intune",
+      "group": "管理",
+      "state": "impacted",
+      "note": "10:01 の改訂で追加"
+    },
+    {
+      "name": "Microsoft Purview（一部）",
+      "group": "コンプライアンス",
+      "state": "impacted",
+      "note": "認可、自動ラベル付け、DLP、コミュニケーション コンプライアンス、データ分類"
+    },
+    {
+      "name": "Power BI（一部）",
+      "group": "分析",
+      "state": "impacted",
+      "note": "秘密度ラベル付きレポートの PDF エクスポートが断続的に失敗"
+    },
+    {
+      "name": "Microsoft 365 Apps 管理センター（一部）",
+      "group": "管理",
+      "state": "impacted",
+      "note": "Cloud Update、Cloud Policy、Inventory"
+    },
+    {
+      "name": "Azure",
+      "group": "クラウド基盤",
+      "state": "unknown",
+      "note": "今回の障害で Azure 側の障害は公表されていない"
+    }
   ],
   "timeline": [
     {
@@ -177,6 +242,22 @@
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
       "ja": "Microsoft が設定変更を元に戻す作業を始めたと報道。10:40 時点で全面復旧と原因の発表はなし。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T01:59:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121060437290516575",
+      "ja": "影響を受けた基盤を隔離した形で再起動し、サーバーの可用性を回復させる取り組みで良い結果が出ている。安定性を確認するためにこれらの基盤の性能を監視しており、確認後に対応を広げる見込み。",
+      "en": "We’re seeing positive results with our efforts to restart affected infrastructure and recover server availability in an isolated manner. We’re actively monitoring the performance of these portions of infrastructure to verify stability, which we suspect will support impro…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T02:09:00Z",
+      "kind": "press",
+      "source": "報道（公式発表の引用）",
+      "url": "https://gizmodo.com/microsoft-365-outage-stretches-late-into-the-evening-with-services-like-outlook-and-teams-still-unstable-2000839374",
+      "ja": "Microsoft が、回復しつつある地域のトラフィックを支えるため、可能な範囲で処理能力を追加していると発表したと報道（国内報道は 11:09、米報道は米東部 21:30 頃としており時刻に差がある）。",
+      "en": ""
     }
   ],
   "cause": {
@@ -196,9 +277,21 @@
     ]
   },
   "japan": [
-    { "t": "2026-11-12T23:25:00Z", "text": "新潟大学が Outlook や Teams などが使えない場合があると学内に案内（08:25 頃）", "kind": "press" },
-    { "t": "", "text": "日本時間 11月13日の始業時間帯に障害が重なり、メール・Teams 会議を中心に業務への影響が広がった", "kind": "press" },
-    { "t": "", "text": "ChatGPT や Claude などから Microsoft 365 に接続するコネクタ機能にも影響が出たと報じられている", "kind": "press" }
+    {
+      "t": "2026-11-12T23:25:00Z",
+      "text": "新潟大学が Outlook や Teams などが使えない場合があると学内に案内（08:25 頃）",
+      "kind": "press"
+    },
+    {
+      "t": "",
+      "text": "日本時間 11月13日の始業時間帯に障害が重なり、メール・Teams 会議を中心に業務への影響が広がった",
+      "kind": "press"
+    },
+    {
+      "t": "",
+      "text": "ChatGPT や Claude などから Microsoft 365 に接続するコネクタ機能にも影響が出たと報じられている",
+      "kind": "press"
+    }
   ],
   "worldwide": [
     "米ニューヨーク市緊急事態管理局：市機関へのメールや Microsoft システムに依存する市のオンラインサービスで遅延や一時的な障害が起こりうると告知",
@@ -206,28 +299,107 @@
     "Defender for Office 365 の Safe Links が URL を検証できない場合があり、Outlook や Teams でのリンククリックに影響の可能性"
   ],
   "actions": [
-    { "who": "管理者", "text": "Microsoft 365 管理センター → 正常性 → サービス正常性 で MO1550821 と EX1550543 を確認する。管理センターに入れない場合は status.cloud.microsoft と X の @MSFT365Status を見る" },
-    { "who": "管理者", "text": "MO1550821 の「詳細情報」欄で、自組織が使う機能（Intune、Purview DLP、Power BI のエクスポートなど）が影響一覧に含まれるか照合する" },
-    { "who": "管理者", "text": "復旧はクライアントの再接続に伴って段階的に進むため、利用者には Outlook／Teams の再起動を案内し、個別の再設定や再インストールは控えてもらう" },
-    { "who": "全員", "text": "「障害対応」「パスワード再設定」を装うフィッシングに注意する。障害時は偽の復旧案内メールが出回りやすい" },
-    { "who": "全員", "text": "急ぎの連絡は電話や別系統のチャットに切り替える。Safe Links の検証が働かない可能性があるため、不審なリンクは開かない" }
+    {
+      "who": "管理者",
+      "text": "Microsoft 365 管理センター → 正常性 → サービス正常性 で MO1550821 と EX1550543 を確認する。管理センターに入れない場合は status.cloud.microsoft と X の @MSFT365Status を見る"
+    },
+    {
+      "who": "管理者",
+      "text": "MO1550821 の「詳細情報」欄で、自組織が使う機能（Intune、Purview DLP、Power BI のエクスポートなど）が影響一覧に含まれるか照合する"
+    },
+    {
+      "who": "管理者",
+      "text": "復旧はクライアントの再接続に伴って段階的に進むため、利用者には Outlook／Teams の再起動を案内し、個別の再設定や再インストールは控えてもらう"
+    },
+    {
+      "who": "全員",
+      "text": "「障害対応」「パスワード再設定」を装うフィッシングに注意する。障害時は偽の復旧案内メールが出回りやすい"
+    },
+    {
+      "who": "全員",
+      "text": "急ぎの連絡は電話や別系統のチャットに切り替える。Safe Links の検証が働かない可能性があるため、不審なリンクは開かない"
+    }
   ],
   "sources": [
-    { "label": "Microsoft 365 Status（X 公式アカウント）", "url": "https://x.com/MSFT365Status", "kind": "official" },
-    { "label": "Microsoft 365 サービス状態（公開ページ）", "url": "https://status.cloud.microsoft/", "kind": "official" },
-    { "label": "Microsoft 365 管理センター サービス正常性（管理者用）", "url": "https://admin.microsoft.com/Adminportal/Home#/servicehealth", "kind": "official" },
-    { "label": "Azure の状態", "url": "https://azure.status.microsoft/ja-jp/status", "kind": "official" },
-    { "label": "BleepingComputer：Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide", "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/", "kind": "press" },
-    { "label": "CNBC：Widespread Microsoft outage takes down Outlook and other 365 services", "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html", "kind": "press" },
-    { "label": "NPR：Is Outlook down? Widespread outage hits Microsoft email and other apps", "url": "https://www.npr.org/2026/11/12/nx-s1-6039343/is-outlook-down-widespread-outage-hits-microsoft-email-and-other-apps", "kind": "press" },
-    { "label": "Al Jazeera：Microsoft outage hits tens of thousands of users", "url": "https://www.aljazeera.com/news/2026/11/12/microsoft-outage-hits-tens-of-thousands-of-users", "kind": "press" },
-    { "label": "ABC News（豪）：Live: Microsoft outage affects users worldwide", "url": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affects-users-worldwide/107381050", "kind": "press" },
-    { "label": "ITmedia NEWS：Microsoft 365で大規模障害", "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003161/", "kind": "press" },
-    { "label": "PC Watch：メールが読めない、Teamsにつながらない。Microsoft 365で大規模障害", "url": "https://pc.watch.impress.co.jp/docs/news/2156144.html", "kind": "press" },
-    { "label": "マイナビニュース：Microsoft 365で大規模障害、Outlookに接続できず", "url": "https://news.mynavi.jp/techplus/article/20261113-5313393/", "kind": "press" },
-    { "label": "Data is CITY：Outlookなど約9時間たっても全面復旧せず", "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/", "kind": "press" }
+    {
+      "label": "Microsoft 365 Status（X 公式アカウント）",
+      "url": "https://x.com/MSFT365Status",
+      "kind": "official"
+    },
+    {
+      "label": "Microsoft 365 サービス状態（公開ページ）",
+      "url": "https://status.cloud.microsoft/",
+      "kind": "official"
+    },
+    {
+      "label": "Microsoft 365 管理センター サービス正常性（管理者用）",
+      "url": "https://admin.microsoft.com/Adminportal/Home#/servicehealth",
+      "kind": "official"
+    },
+    {
+      "label": "Azure の状態",
+      "url": "https://azure.status.microsoft/ja-jp/status",
+      "kind": "official"
+    },
+    {
+      "label": "BleepingComputer：Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide",
+      "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/",
+      "kind": "press"
+    },
+    {
+      "label": "CNBC：Widespread Microsoft outage takes down Outlook and other 365 services",
+      "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+      "kind": "press"
+    },
+    {
+      "label": "NPR：Is Outlook down? Widespread outage hits Microsoft email and other apps",
+      "url": "https://www.npr.org/2026/11/12/nx-s1-6039343/is-outlook-down-widespread-outage-hits-microsoft-email-and-other-apps",
+      "kind": "press"
+    },
+    {
+      "label": "Al Jazeera：Microsoft outage hits tens of thousands of users",
+      "url": "https://www.aljazeera.com/news/2026/11/12/microsoft-outage-hits-tens-of-thousands-of-users",
+      "kind": "press"
+    },
+    {
+      "label": "ABC News（豪）：Live: Microsoft outage affects users worldwide",
+      "url": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affects-users-worldwide/107381050",
+      "kind": "press"
+    },
+    {
+      "label": "ITmedia NEWS：Microsoft 365で大規模障害",
+      "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003161/",
+      "kind": "press"
+    },
+    {
+      "label": "PC Watch：メールが読めない、Teamsにつながらない。Microsoft 365で大規模障害",
+      "url": "https://pc.watch.impress.co.jp/docs/news/2156144.html",
+      "kind": "press"
+    },
+    {
+      "label": "マイナビニュース：Microsoft 365で大規模障害、Outlookに接続できず",
+      "url": "https://news.mynavi.jp/techplus/article/20261113-5313393/",
+      "kind": "press"
+    },
+    {
+      "label": "Data is CITY：Outlookなど約9時間たっても全面復旧せず",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "kind": "press"
+    },
+    {
+      "label": "Gizmodo：Microsoft 365 Outage Stretches Late Into the Evening",
+      "url": "https://gizmodo.com/microsoft-365-outage-stretches-late-into-the-evening-with-services-like-outlook-and-teams-still-unstable-2000839374",
+      "kind": "press"
+    }
   ],
   "changelog": [
-    { "t": "2026-11-13T02:17:00Z", "text": "サイト公開。公式 X 投稿 11 件と MO1550821／EX1550543 の内容を整理" }
+    {
+      "t": "2026-11-13T02:17:00Z",
+      "text": "サイト公開。公式 X 投稿 11 件と MO1550821／EX1550543 の内容を整理"
+    },
+    {
+      "t": "2026-11-13T03:25:00Z",
+      "text": "10:59 の公式更新（隔離した再起動で良い結果、安定性を監視中）と、処理能力追加の報道を追加。全面復旧の宣言はなし"
+    }
   ]
 }
