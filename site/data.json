@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T18:28:00Z",
+    "lastUpdated": "2026-11-13T19:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 16,
+    "updateCount": 17,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "partial",
     "label": "障害継続中（回復傾向）",
-    "headline": "Microsoft が謝罪し原因を説明：以前のネットワーク容量増強で入った問題が、最近のネットワーク変更で表面化。根本原因には対処済みで、一部顧客の復旧作業が続く",
+    "headline": "Microsoft が謝罪し原因を説明：以前のネットワーク容量増強で入った問題が、最近のネットワーク変更で表面化。根本原因には対処済みだが、一部の顧客・地域で復旧作業が続き、全面復旧の宣言はまだ出ていない",
     "summary": [
       "【最新】Microsoft は 13日（米国時間）に謝罪し、原因を「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」と説明しました。根本の原因には対処済みで、一部の顧客への復旧を続けています。影響を受けた顧客はサービスクレジットを申請できます（報道経由）。",
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
@@ -699,6 +699,16 @@
       "label": "Daily Caller：Microsoft Says Email Backlog 'Approaching Normal'",
       "url": "https://dailycaller.com/2026/11/13/microsoft-email-outlook-outage-announcement-downdetector/",
       "kind": "press"
+    },
+    {
+      "label": "RTÉ：Microsoft says outage caused by network capacity upgrade",
+      "url": "https://www.rte.ie/news/business/2026/1113/1599061-microsoft-tech-outage/",
+      "kind": "press"
+    },
+    {
+      "label": "CBC：Microsoft 'deeply sorry' for multi-day outage",
+      "url": "https://cbc.ca/news/world/livestory/microsoft-outage-outlook-teams-copilot-9.7420354",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -765,6 +775,10 @@
     {
       "t": "2026-11-13T18:28:00Z",
       "text": "Microsoft の謝罪声明（原因：以前のネットワーク容量増強で入った問題が最近のネットワーク変更で表面化、根本原因は対処済み、クレジット申請可、攻撃・AI エージェントは否定）を報道経由で反映。原因欄を更新し、対応欄にクレジット申請を追加"
+    },
+    {
+      "t": "2026-11-13T19:24:00Z",
+      "text": "新しい公式発表は確認できず。Microsoft は一部の顧客・地域で復旧を継続中で、社内調査の完了後に根本原因の詳細報告を出すとしている（報道）。全面復旧の宣言はなし"
     }
   ]
 }
