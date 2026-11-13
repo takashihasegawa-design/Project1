@@ -1,15 +1,16 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T17:25:00Z",
+    "lastUpdated": "2026-11-13T18:28:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 15,
+    "updateCount": 16,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "partial",
     "label": "障害継続中（回復傾向）",
-    "headline": "Microsoft 365 の接続障害は発生から約 25 時間。メールキューは通常レベルに近づき回復が進むが、断続的な不具合は残り、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft が謝罪し原因を説明：以前のネットワーク容量増強で入った問題が、最近のネットワーク変更で表面化。根本原因には対処済みで、一部顧客の復旧作業が続く",
     "summary": [
+      "【最新】Microsoft は 13日（米国時間）に謝罪し、原因を「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」と説明しました。根本の原因には対処済みで、一部の顧客への復旧を続けています。影響を受けた顧客はサービスクレジットを申請できます（報道経由）。",
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
       "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。その後、トラフィック最適化と、上流の認証・ルーティング コンポーネントへの修正パッチで安定性が改善。16:24 にパッチの効果を確認し、17:06 からは業務のピーク時間帯にあるリージョンを優先して展開を広げています（管理センターの更新を報道経由で確認）。",
@@ -23,7 +24,7 @@
     "startedAt": "2026-11-12T16:17:00Z",
     "resolvedAt": null,
     "etaText": "公式の復旧見込み時刻：未公表",
-    "cyberattack": "日本マイクロソフト：「サイバー攻撃を示唆する事実は確認されていない」（日経報道）"
+    "cyberattack": "Microsoft：サイバー攻撃でも AI エージェントによるものでもない"
   },
   "incidents": [
     {
@@ -457,10 +458,20 @@
       "url": "https://x.com/MSFT365Status/status/2121246073955962896",
       "ja": "サービス可用性の改善が続いている。メールキューは大幅に減少し、通常レベルに近づいている。一部の利用者では断続的なアクセス障害やメール遅延が続く可能性がある。追加の緩和策を実施した。",
       "en": "We’re continuing to see improvements in service availability, with email queues significantly reduced and approaching normal levels. Some users may still experience intermittent access issues or delayed email delivery as recovery continues. We’ve implemented additional m…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T17:30:00Z",
+      "kind": "official",
+      "source": "Microsoft の声明（報道経由・発表時刻は推定）",
+      "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+      "ja": "Microsoft が障害について謝罪（「深くお詫びする」）。原因は「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」ものと説明。根本の原因には対処済みで、一部の顧客への復旧作業を続けている。サイバー攻撃でも AI エージェントによるものでもないとし、影響を受けた顧客はサービスクレジットを申請できるとした。",
+      "en": ""
     }
   ],
   "cause": {
     "confirmed": [
+      "発端：以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した（Microsoft の声明、報道経由）",
+      "根本の原因には対処済み（Microsoft の声明、報道経由）",
       "高負荷の原因はトラフィック増ではない（公式）",
       "多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りのサーバーに負荷が集中した（公式）",
       "影響サーバー上のコア プロセスが過負荷になり、容量が失われている（公式）",
@@ -471,12 +482,13 @@
     "underInvestigation": [
       "修正パッチの対象は「上流の認証・ルーティング コンポーネント」。これが根本原因かどうかは公表されていない（MO1550821 の更新、報道経由）",
       "ヘルスチェック失敗は、サーバー正常性を処理する特定コンポーネントに起因する可能性（公式は「可能性」と表現）",
-      "少数の直近の構成更新との関係。Microsoft は当初「影響開始と相関する変更は見つかっていない」とし、その後ロールバックの有効性を評価。構成変更が原因とは確認していない",
       "再応答不能を引き起こす要因（診断データを分析中）",
-      "根本原因と再発防止策は、緩和後に事後レビュー（PIR）で公表予定（報道）"
+      "根本原因と再発防止策は、緩和後に事後レビュー（PIR）で公表予定（報道）",
+      "容量増強作業の具体的な内容と、ヘルスチェック失敗・サーバー応答不能との因果関係の詳細（事後レビュー待ち）"
     ],
     "ruledOut": [
-      "サイバー攻撃：日本マイクロソフト広報が「サイバー攻撃を示唆する事実は確認されていない」と説明（日本経済新聞）。米国でも同趣旨の説明が報じられている"
+      "サイバー攻撃：Microsoft が否定（日本マイクロソフトも「サイバー攻撃を示唆する事実は確認されていない」と説明）",
+      "AI エージェントによるもの：Microsoft が否定（報道）"
     ]
   },
   "japan": [
@@ -516,6 +528,10 @@
     {
       "who": "管理者",
       "text": "Microsoft 365 管理センター → 正常性 → サービス正常性 で MO1550821 と EX1550543 を確認する。管理センターに入れない場合は status.cloud.microsoft と X の @MSFT365Status を見る"
+    },
+    {
+      "who": "管理者",
+      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。契約の SLA 条件と申請方法を Microsoft 365 管理センターまたは担当窓口で確認する"
     },
     {
       "who": "管理者",
@@ -668,6 +684,21 @@
       "label": "CNN：Microsoft outage live updates",
       "url": "https://www.cnn.com/2026/11/12/business/live-news/microsoft-global-outage-intl-hnk",
       "kind": "press"
+    },
+    {
+      "label": "Windows Central：\"We are deeply sorry\" Microsoft apologizes for major outage",
+      "url": "https://www.windowscentral.com/microsoft/we-are-deeply-sorry-microsoft-apologizes-for-major-outage-that-knocked-outlook-teams-and-microsoft-365-offline-for-24-hours-insists-it-wasnt-ai-that-caused-it",
+      "kind": "press"
+    },
+    {
+      "label": "Variety：Microsoft Apologizes for Massive Outlook Outage, Affected Customers Can Request Credits",
+      "url": "https://variety.com/2026/digital/news/microsoft-apologizes-outlook-outage-customer-credits-1236947124/",
+      "kind": "press"
+    },
+    {
+      "label": "Daily Caller：Microsoft Says Email Backlog 'Approaching Normal'",
+      "url": "https://dailycaller.com/2026/11/13/microsoft-email-outlook-outage-announcement-downdetector/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -730,6 +761,10 @@
     {
       "t": "2026-11-13T17:25:00Z",
       "text": "公式更新 2 件（21:09：可用性とメール配信が改善、23:17：メールキューが通常レベルに接近）を追加。全面復旧の宣言はなし"
+    },
+    {
+      "t": "2026-11-13T18:28:00Z",
+      "text": "Microsoft の謝罪声明（原因：以前のネットワーク容量増強で入った問題が最近のネットワーク変更で表面化、根本原因は対処済み、クレジット申請可、攻撃・AI エージェントは否定）を報道経由で反映。原因欄を更新し、対応欄にクレジット申請を追加"
     }
   ]
 }
