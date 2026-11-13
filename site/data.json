@@ -1,16 +1,17 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T22:24:00Z",
+    "lastUpdated": "2026-11-13T23:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 20,
+    "updateCount": 21,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "partial",
     "label": "障害継続中（回復傾向）",
-    "headline": "Microsoft が謝罪し原因を説明：以前のネットワーク容量増強で入った問題が、最近のネットワーク変更で表面化。根本原因には対処済みだが、一部の顧客・地域で復旧作業が続き、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft が「広範囲にわたる復旧」を発表し謝罪。原因は以前のネットワーク容量増強で入った問題。日本の一部で接続しにくさやメール遅延が残る可能性があり、全面復旧の宣言はまだ",
     "summary": [
       "【最新】Microsoft は 13日（米国時間）に謝罪し、原因を「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」と説明しました。根本の原因には対処済みで、一部の顧客への復旧を続けています。影響を受けた顧客はサービスクレジットを申請できます（報道経由）。",
+      "14日 01:40（日本時間）、Microsoft は広範囲にわたる復旧がみられると発表しました。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性があります。Microsoft は謝罪し、報告書を公表するとしています（NHK・日本経済新聞）。",
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
       "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。その後、トラフィック最適化と、上流の認証・ルーティング コンポーネントへの修正パッチで安定性が改善。16:24 にパッチの効果を確認し、17:06 からは業務のピーク時間帯にあるリージョンを優先して展開を広げています（管理センターの更新を報道経由で確認）。",
@@ -460,11 +461,27 @@
       "en": "We’re continuing to see improvements in service availability, with email queues significantly reduced and approaching normal levels. Some users may still experience intermittent access issues or delayed email delivery as recovery continues. We’ve implemented additional m…（以下省略）"
     },
     {
-      "t": "2026-11-13T17:30:00Z",
+      "t": "2026-11-13T17:57:00Z",
       "kind": "official",
-      "source": "Microsoft の声明（報道経由・発表時刻は推定）",
+      "source": "Microsoft の声明（報道経由）",
       "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
       "ja": "Microsoft が障害について謝罪（「深くお詫びする」）。原因は「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」ものと説明。根本の原因には対処済みで、一部の顧客への復旧作業を続けている。サイバー攻撃でも AI エージェントによるものでもないとし、影響を受けた顧客はサービスクレジットを申請できるとした。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T16:40:00Z",
+      "kind": "official",
+      "source": "Microsoft 発表（報道経由：NHK・日本経済新聞）",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261114de75755",
+      "ja": "広範囲にわたる復旧がみられると発表（14日 01:40 日本時間）。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性がある。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T20:15:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "14日 05:15 時点で全面復旧の発表はなし。個人向けサービスでは遅れたメールが後から届く見通し。",
       "en": ""
     }
   ],
@@ -716,6 +733,21 @@
       "label": "TechRadar（ライブ）：Outlook and Teams returning to 'normal levels'",
       "url": "https://www.techradar.com/news/live/outlook-outage-nov-2026",
       "kind": "press"
+    },
+    {
+      "label": "NHK：マイクロソフト 接続障害「広範囲にわたる復旧がみられる」",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261114de75755",
+      "kind": "press"
+    },
+    {
+      "label": "日本経済新聞：マイクロソフト365障害、20時間経て広範に復旧 謝罪し報告書公表へ",
+      "url": "https://www.nikkei.com/article/DGXZQOGN13D1J0T11C26A1000000/",
+      "kind": "press"
+    },
+    {
+      "label": "朝日新聞（Yahoo!ニュース）：日本は「比較的安定状態」に",
+      "url": "https://news.yahoo.co.jp/articles/d2db8300ba543f40f0228994c065f5f28dbdb002",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -798,6 +830,10 @@
     {
       "t": "2026-11-13T22:24:00Z",
       "text": "定期確認。MO1550821 の解決宣言・新しい公式発表は確認できず。米メディアは「通常レベルに戻りつつある」と報道（正式な終息宣言ではない）"
+    },
+    {
+      "t": "2026-11-13T23:25:00Z",
+      "text": "14日 01:40 の Microsoft 発表（広範囲で復旧）と 05:15 時点の報道を追加。謝罪声明の時刻を 14日 02:57（日本時間）に確定し修正。全面復旧の宣言はなし"
     }
   ]
 }
