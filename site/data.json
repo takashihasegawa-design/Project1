@@ -1,20 +1,21 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T15:36:00Z",
+    "lastUpdated": "2026-11-13T16:40:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 13,
+    "updateCount": 14,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "partial",
     "label": "障害継続中（回復傾向）",
-    "headline": "Microsoft 365 の接続障害は発生から 23 時間超。北米・欧州・アジア太平洋で回復が続くが、断続的な不具合とメール遅延が残り、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の接続障害は発生から 24 時間目。北米・欧州で改善が進み、アジア太平洋にも回復の兆し。断続的な不具合とメール遅延は残り、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
       "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。その後、トラフィック最適化と、上流の認証・ルーティング コンポーネントへの修正パッチで安定性が改善。16:24 にパッチの効果を確認し、17:06 からは業務のピーク時間帯にあるリージョンを優先して展開を広げています（管理センターの更新を報道経由で確認）。",
       "20:11（日本時間）の公式更新では、影響を受けた基盤の一部で対応が完了し、トラフィックを段階的に戻していると説明。メールボックスへのアクセスと遅延メールの処理が改善している一方、断続的な問題は残っています。アジア太平洋の一部ではメールが戻り始めたと報じられています。",
       "21:00（日本時間）の管理センター更新では、日本は比較的安定し、欧州で回復が進み、北米も改善していると説明されています（報道経由）。",
+      "22:32（日本時間）の公式更新では、北米で広範な改善、欧州の大部分で持続的な改善、アジア太平洋でも回復の兆しがあるとしています。一部の利用者では断続的なアクセス障害やメール遅延が続く可能性があります。",
       "10:01（日本時間）の公式更新で影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。",
       "遅延メールを保全するため、Microsoft はメールのタイムアウトを 48 時間に延長しました。根本原因と再発防止策は、障害の緩和後に事後レビュー（Post-Incident Report）で公表するとしています（報道）。"
     ],
@@ -423,6 +424,22 @@
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
       "ja": "発生から約 21 時間。北米・欧州・アジア太平洋で回復が続くが全面復旧はまだ。断続的につながらない利用者やメールの遅延も残る。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T10:28:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121188436769956078",
+      "ja": "【後から確認できた投稿】影響を受けた基盤全体で復旧作業を段階的に進めている。いくつかのワークロードで段階的な改善が見られるが、サービスの正常性はばらつきがあり、容量はまだ通常水準に戻っていない。遅延メールを保護するため…（以下省略）",
+      "en": "Recovery actions are ongoing across affected Microsoft 365 infrastructure and progressing in phases. We’re seeing incremental improvement in several workloads, but service health remains variable and capacity has not yet fully returned to baseline. To protect delayed mai…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T13:32:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121234739562450970",
+      "ja": "影響を受けたリージョン全体で回復が続いている。北米ではより広範な改善、欧州の大部分では持続的な改善、アジア太平洋でも有望な回復の兆候。一部の利用者では断続的なアクセス障害やメール配信の遅延が続く場合がある。",
+      "en": "We’re seeing continued recovery progress across affected regions, with broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia Pacific. Some users may still experience intermittent access issues or del…（以下省略）"
     }
   ],
   "cause": {
@@ -623,6 +640,11 @@
       "label": "Data is CITY（ライブ）：Microsoft 365の障害",
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage-live/",
       "kind": "press"
+    },
+    {
+      "label": "XDA Developers：Microsoft's major outage drags on",
+      "url": "https://www.xda-developers.com/microsoft-suffering-major-outage-taking-down-microsoft-365-outlook-teams-onedrive/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -677,6 +699,10 @@
     {
       "t": "2026-11-13T15:36:00Z",
       "text": "定期実行が遅延し 23:19 の更新を飛ばして 00:36 に実施。20:11 以降の新しい X 投稿は確認できず。12:13 の公式投稿（変更が想定どおり効かず）を補完し、北米・欧州・アジア太平洋で回復継続との報道を追加"
+    },
+    {
+      "t": "2026-11-13T16:40:00Z",
+      "text": "公式更新（22:32：北米・欧州で改善、アジア太平洋に回復の兆し、断続的な不具合とメール遅延は残る）と、見落としていた 19:28 の公式投稿を追加。全面復旧の宣言はなし"
     }
   ]
 }
