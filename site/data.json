@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "lastUpdated": "2026-11-13T02:17:00Z",
+    "updateIntervalMinutes": 60,
+    "updateCount": 1,
+    "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
+  },
+  "status": {
+    "level": "major",
+    "label": "障害継続中（一部回復）",
+    "headline": "Microsoft 365 で世界規模の接続障害。サーバーの一部は復帰したが、全面復旧の宣言はまだ出ていない",
+    "summary": [
+      "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
+      "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
+      "一部のサーバーはサービスに復帰しましたが、Microsoft は「復帰したサーバーがトラフィックを受けると再び応答しなくなる場合がある」としており、トラフィック種別の制限や旧構成での再構築を並行して進めています。",
+      "最新の公式更新（10:01 日本時間）では影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。"
+    ],
+    "startedAt": "2026-11-12T16:17:00Z",
+    "resolvedAt": null,
+    "etaText": "公式の復旧見込み時刻：未公表",
+    "cyberattack": "Microsoft はサイバー攻撃を示す兆候はないとしている（報道）"
+  },
+  "incidents": [
+    {
+      "id": "EX1550543",
+      "service": "Exchange Online",
+      "title": "Users may be unable to access Exchange Online mailboxes through multiple connection methods",
+      "titleJa": "複数の接続方法で Exchange Online のメールボックスにアクセスできない場合がある",
+      "classification": "インシデント",
+      "state": "サービス低下（調査・復旧中）",
+      "startedAt": "2026-11-12T16:17:00Z",
+      "scope": "当初は南北アメリカ。のちに全リージョンで影響の可能性と案内。Outlook on the web、デスクトップ／モバイル版 Outlook、MAPI、Exchange ActiveSync、REST API 経由の接続が影響を受けた。"
+    },
+    {
+      "id": "MO1550821",
+      "service": "Microsoft 365 suite",
+      "title": "Users may be unable to connect to multiple Microsoft 365 services",
+      "titleJa": "複数の Microsoft 365 サービスに接続できない場合がある",
+      "classification": "インシデント",
+      "state": "サービス低下（調査・復旧中）",
+      "startedAt": "2026-11-12T18:26:00Z",
+      "scope": "任意のリージョンのユーザーで Microsoft 365 サービスへの接続に影響の可能性。基盤の一部で複数リージョンにまたがる高負荷が発生。"
+    }
+  ],
+  "services": [
+    { "name": "Exchange Online / Outlook", "group": "コア", "state": "impacted", "note": "メール送受信・メールボックス接続。障害の中心" },
+    { "name": "Microsoft Teams", "group": "コア", "state": "impacted", "note": "接続障害で一部機能が使えない。別件の北米 Teams 障害が先行" },
+    { "name": "SharePoint Online", "group": "コア", "state": "impacted", "note": "" },
+    { "name": "Microsoft 365 Copilot", "group": "コア", "state": "impacted", "note": "" },
+    { "name": "Microsoft Planner", "group": "コア", "state": "impacted", "note": "影響一覧に追加" },
+    { "name": "Microsoft To Do", "group": "コア", "state": "impacted", "note": "影響一覧に追加" },
+    { "name": "Microsoft Defender XDR", "group": "セキュリティ", "state": "impacted", "note": "" },
+    { "name": "Defender for Office 365", "group": "セキュリティ", "state": "impacted", "note": "Safe Links が URL を検証できない場合がある（報道）" },
+    { "name": "Microsoft Intune", "group": "管理", "state": "impacted", "note": "10:01 の改訂で追加" },
+    { "name": "Microsoft Purview（一部）", "group": "コンプライアンス", "state": "impacted", "note": "認可、自動ラベル付け、DLP、コミュニケーション コンプライアンス、データ分類" },
+    { "name": "Power BI（一部）", "group": "分析", "state": "impacted", "note": "秘密度ラベル付きレポートの PDF エクスポートが断続的に失敗" },
+    { "name": "Microsoft 365 Apps 管理センター（一部）", "group": "管理", "state": "impacted", "note": "Cloud Update、Cloud Policy、Inventory" },
+    { "name": "Azure", "group": "クラウド基盤", "state": "unknown", "note": "今回の障害で Azure 側の障害は公表されていない" }
+  ],
+  "timeline": [
+    {
+      "t": "2026-11-12T16:17:00Z",
+      "kind": "official",
+      "source": "サービス正常性 EX1550543",
+      "url": "",
+      "ja": "Microsoft が記録した Exchange Online インシデントの開始時刻（米東部 11:17）。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-12T17:54:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120938282204688468",
+      "ja": "南北アメリカで、複数の接続方法による Exchange Online メールボックスへのアクセスに問題が出ているという報告を調査中。",
+      "en": "We're investigating reports of users experiencing issues accessing Exchange Online mailboxes through multiple connection methods in the Americas. More details can be found in the Microsoft 365 admin center under EX1550543."
+    },
+    {
+      "t": "2026-11-12T18:00:00Z",
+      "kind": "press",
+      "source": "報道（Downdetector の集計）",
+      "url": "https://www.aljazeera.com/news/2026/11/12/microsoft-outage-hits-tens-of-thousands-of-users",
+      "ja": "米東部 13 時すぎ、Downdetector の Outlook 障害報告が約 13 万件でピーク。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-12T18:26:00Z",
+      "kind": "official",
+      "source": "サービス正常性 MO1550821",
+      "url": "",
+      "ja": "Microsoft 365 全体のインシデント MO1550821 を開設。Exchange Online、Teams、SharePoint Online、Microsoft 365 Copilot、Defender XDR への接続に影響の可能性。基盤の一部で複数リージョンにまたがる高負荷。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-12T19:12:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120957934607700161",
+      "ja": "影響軽減のあらゆる手段を講じている。全デプロイを停止し、影響を受けた基盤から追加のトラフィックを移し、サーバーを再起動して復帰させている。",
+      "en": "We're aggressively pursuing all pathways to reduce impact. We've paused all deployments, we're moving additional traffic off the affected infrastructure, and we're restarting affected servers to return them to service."
+    },
+    {
+      "t": "2026-11-12T19:31:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120962673911181437",
+      "ja": "高負荷はトラフィック増によるものではなく、多数のサーバーが予期せず利用不能になり、残りの基盤に負担がかかったためと判明。安全にサービスへ戻す作業中。",
+      "en": "We determined the elevated load isn't driven by an increase in traffic, but by a number of servers being unexpectedly unavailable; straining the remaining infrastructure. We're working to safely return them to service."
+    },
+    {
+      "t": "2026-11-12T19:50:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120967496303858112",
+      "ja": "サーバーが自動ヘルスチェックに失敗して利用不能になる問題に対処する構成変更をテスト中。並行して、影響を受けた全サーバーの再起動を開始し、復帰状況を監視。",
+      "en": "We're testing a configuration change to address a problem that's causing servers to fail automated health checks and become unavailable. In parallel, we've initiated a restart of all affected servers and are monitoring health as they return to service."
+    },
+    {
+      "t": "2026-11-12T20:19:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120974801388904932",
+      "ja": "影響開始と相関する直近の変更は見つかっていない。ただし、ヘルスチェックの失敗はサーバーの正常性を処理する特定のコンポーネントに起因する可能性がある。追加のサーバーが影響を受けないよう措置を講じた。",
+      "en": "We've not identified any recent change correlated with the start of impact; however, our investigation indicates the failed health checks may originate from a specific component that's responsible for processing server health. We've taken steps to prevent additional serv…（以下省略）"
+    },
+    {
+      "t": "2026-11-12T21:00:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120985048337830246",
+      "ja": "代替のヘルスチェック方式を検証し、一部のサーバーがサービスに復帰。この変更を広く適用中。応答しないサーバーを継続的に検知・再起動する自動復旧の仕組みも準備中。",
+      "en": "We've validated an alternative service health check method, which allowed a subset of affected servers to successfully return to service. We're now applying this change more broadly. We're also preparing automated recovery systems to continually detect and restart unresp…（以下省略）"
+    },
+    {
+      "t": "2026-11-12T21:40:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120995209261514827",
+      "ja": "影響を受けたサーバーの再起動と検証を進めている。並行して、特定した少数の直近の構成更新を元に戻すことで復旧を早められるか評価中。",
+      "en": "We're actively restarting and validating the affected servers to return them to service. In parallel, we're assessing whether reverting a small number of recent configuration updates we identified could help accelerate recovery."
+    },
+    {
+      "t": "2026-11-12T22:09:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121002505911857577",
+      "ja": "これまでの対応では期待した改善が得られなかったため、あらゆる復旧経路を開いている。影響サーバー上のコア プロセスが過負荷になり容量が失われていることを特定。復旧策を検証するため一部を隔離中。",
+      "en": "We're opening all available pathways to restore service, as our actions taken thus far have not provided the anticipated relief. We found a core process on affected servers is becoming overwhelmed, causing capacity loss. To validate a potential recovery, we're isolating…（以下省略）"
+    },
+    {
+      "t": "2026-11-12T23:04:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121016338181161457",
+      "ja": "影響を受けたサーバーの一部をサービスに戻しており、現時点で安定。可能な限り代替経路へトラフィックを移し、限定的な回復を確認。残りのサーバーを戻す手順も効率化した。",
+      "en": "We're returning a portion of affected servers to the service, and they remain stable so far. We're also shifting traffic to alternate routes wherever possible and observing limited recovery. In parallel, we've streamlined the process of returning the remaining affected s…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T00:06:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121031935010951521",
+      "ja": "復帰させたサーバーがトラフィックを受けると再び応答しなくなる場合がある。何が引き金かを診断データで分析中。並行して、一部の拠点で影響基盤に到達できるトラフィックの種類を一時的に制限。旧構成でサーバーの一部を再構築し、再発を防げるか検証中（報道による補足）。",
+      "en": "The servers we returned to service can become unresponsive again once they receive traffic; we're analyzing diagnostic data to determine what's triggering the behavior. In parallel, we're temporarily limiting which types of traffic can reach the affected infrastructure i…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T01:01:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121045804852945188",
+      "ja": "既知の影響シナリオを見直し、影響サービス・機能の一覧を改訂。管理センターの MO1550821「詳細情報」欄、または管理センターを使えない場合は status.cloud.microsoft で確認できる。",
+      "en": "We've reviewed known impact scenarios and revised the list of impacted services and features, which can be viewed in the \"more info\" section of the communication MO1550821 in the Microsoft 365 admin center, as well as status.cloud.microsoft if the admin center is not av…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T01:06:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "Microsoft が設定変更を元に戻す作業を始めたと報道。10:40 時点で全面復旧と原因の発表はなし。",
+      "en": ""
+    }
+  ],
+  "cause": {
+    "confirmed": [
+      "高負荷の原因はトラフィック増ではない（公式）",
+      "多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りのサーバーに負荷が集中した（公式）",
+      "影響サーバー上のコア プロセスが過負荷になり、容量が失われている（公式）",
+      "復帰させたサーバーが、トラフィックを受けると再び応答しなくなる場合がある（公式）"
+    ],
+    "underInvestigation": [
+      "ヘルスチェック失敗は、サーバー正常性を処理する特定コンポーネントに起因する可能性（公式は「可能性」と表現）",
+      "少数の直近の構成更新との関係。Microsoft は当初「影響開始と相関する変更は見つかっていない」とし、その後ロールバックの有効性を評価。構成変更が原因とは確認していない",
+      "再応答不能を引き起こす要因（診断データを分析中）"
+    ],
+    "ruledOut": [
+      "サイバー攻撃：Microsoft はその兆候はないとしている（報道経由）"
+    ]
+  },
+  "japan": [
+    { "t": "2026-11-12T23:25:00Z", "text": "新潟大学が Outlook や Teams などが使えない場合があると学内に案内（08:25 頃）", "kind": "press" },
+    { "t": "", "text": "日本時間 11月13日の始業時間帯に障害が重なり、メール・Teams 会議を中心に業務への影響が広がった", "kind": "press" },
+    { "t": "", "text": "ChatGPT や Claude などから Microsoft 365 に接続するコネクタ機能にも影響が出たと報じられている", "kind": "press" }
+  ],
+  "worldwide": [
+    "米ニューヨーク市緊急事態管理局：市機関へのメールや Microsoft システムに依存する市のオンラインサービスで遅延や一時的な障害が起こりうると告知",
+    "米オハイオ州サミット郡：メールの代わりに電話での連絡を呼びかけ",
+    "Defender for Office 365 の Safe Links が URL を検証できない場合があり、Outlook や Teams でのリンククリックに影響の可能性"
+  ],
+  "actions": [
+    { "who": "管理者", "text": "Microsoft 365 管理センター → 正常性 → サービス正常性 で MO1550821 と EX1550543 を確認する。管理センターに入れない場合は status.cloud.microsoft と X の @MSFT365Status を見る" },
+    { "who": "管理者", "text": "MO1550821 の「詳細情報」欄で、自組織が使う機能（Intune、Purview DLP、Power BI のエクスポートなど）が影響一覧に含まれるか照合する" },
+    { "who": "管理者", "text": "復旧はクライアントの再接続に伴って段階的に進むため、利用者には Outlook／Teams の再起動を案内し、個別の再設定や再インストールは控えてもらう" },
+    { "who": "全員", "text": "「障害対応」「パスワード再設定」を装うフィッシングに注意する。障害時は偽の復旧案内メールが出回りやすい" },
+    { "who": "全員", "text": "急ぎの連絡は電話や別系統のチャットに切り替える。Safe Links の検証が働かない可能性があるため、不審なリンクは開かない" }
+  ],
+  "sources": [
+    { "label": "Microsoft 365 Status（X 公式アカウント）", "url": "https://x.com/MSFT365Status", "kind": "official" },
+    { "label": "Microsoft 365 サービス状態（公開ページ）", "url": "https://status.cloud.microsoft/", "kind": "official" },
+    { "label": "Microsoft 365 管理センター サービス正常性（管理者用）", "url": "https://admin.microsoft.com/Adminportal/Home#/servicehealth", "kind": "official" },
+    { "label": "Azure の状態", "url": "https://azure.status.microsoft/ja-jp/status", "kind": "official" },
+    { "label": "BleepingComputer：Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide", "url": "https://www.bleepingcomputer.com/news/microsoft/massive-microsoft-365-outage-disrupts-outlook-teams-copilot-worldwide/", "kind": "press" },
+    { "label": "CNBC：Widespread Microsoft outage takes down Outlook and other 365 services", "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html", "kind": "press" },
+    { "label": "NPR：Is Outlook down? Widespread outage hits Microsoft email and other apps", "url": "https://www.npr.org/2026/11/12/nx-s1-6039343/is-outlook-down-widespread-outage-hits-microsoft-email-and-other-apps", "kind": "press" },
+    { "label": "Al Jazeera：Microsoft outage hits tens of thousands of users", "url": "https://www.aljazeera.com/news/2026/11/12/microsoft-outage-hits-tens-of-thousands-of-users", "kind": "press" },
+    { "label": "ABC News（豪）：Live: Microsoft outage affects users worldwide", "url": "https://www.abc.net.au/news/2026-11-13/microsoft-outage-affects-users-worldwide/107381050", "kind": "press" },
+    { "label": "ITmedia NEWS：Microsoft 365で大規模障害", "url": "https://www.itmedia.co.jp/news/article/2611/13/2000003161/", "kind": "press" },
+    { "label": "PC Watch：メールが読めない、Teamsにつながらない。Microsoft 365で大規模障害", "url": "https://pc.watch.impress.co.jp/docs/news/2156144.html", "kind": "press" },
+    { "label": "マイナビニュース：Microsoft 365で大規模障害、Outlookに接続できず", "url": "https://news.mynavi.jp/techplus/article/20261113-5313393/", "kind": "press" },
+    { "label": "Data is CITY：Outlookなど約9時間たっても全面復旧せず", "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/", "kind": "press" }
+  ],
+  "changelog": [
+    { "t": "2026-11-13T02:17:00Z", "text": "サイト公開。公式 X 投稿 11 件と MO1550821／EX1550543 の内容を整理" }
+  ]
+}

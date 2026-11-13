@@ -1,0 +1,370 @@
+<title>M365 障害トラッカー</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: incident board. Status band on top, then official timeline as the spine, supporting panels around it. */
+:root {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --surface-2: #f6f8fb;
+  --ink: #111926;
+  --muted: #586374;
+  --line: #d6dce5;
+  --accent: #1d4ed8;
+  --accent-soft: #e3eafc;
+  --crit: #c0262d;
+  --crit-soft: #fbe6e7;
+  --warn: #a35f00;
+  --warn-soft: #fbefd9;
+  --ok: #18774a;
+  --ok-soft: #dff3e8;
+  --press: #6b5bb5;
+  --press-soft: #ece9f8;
+  --font-body: "IBM Plex Sans JP", "Hiragino Sans", "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c1117; --surface: #141b24; --surface-2: #19212c; --ink: #e5eaf1; --muted: #93a0b3; --line: #273243;
+    --accent: #7ea3ff; --accent-soft: #1b2847; --crit: #ff6f6f; --crit-soft: #3a1a1d; --warn: #f2b552; --warn-soft: #36291a;
+    --ok: #5fd09a; --ok-soft: #14301f; --press: #b3a6ff; --press-soft: #262245; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c1117; --surface: #141b24; --surface-2: #19212c; --ink: #e5eaf1; --muted: #93a0b3; --line: #273243;
+  --accent: #7ea3ff; --accent-soft: #1b2847; --crit: #ff6f6f; --crit-soft: #3a1a1d; --warn: #f2b552; --warn-soft: #36291a;
+  --ok: #5fd09a; --ok-soft: #14301f; --press: #b3a6ff; --press-soft: #262245; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.7; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 48px; display: grid; gap: 20px; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.35; }
+h2 { font-size: 1.05rem; font-weight: 700; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+h2 small { font-weight: 400; color: var(--muted); font-size: .8rem; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.label { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-family: var(--font-mono); }
+
+/* top bar */
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1rem; }
+.brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--crit); box-shadow: 0 0 0 4px var(--crit-soft); }
+.brand.ok .dot { background: var(--ok); box-shadow: 0 0 0 4px var(--ok-soft); }
+.updated { display: flex; gap: 16px; flex-wrap: wrap; font-size: .82rem; color: var(--muted); }
+.updated b { color: var(--ink); font-weight: 500; }
+
+/* status band */
+.band { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); display: grid; grid-template-columns: 6px 1fr; overflow: hidden; }
+.band .stripe { background: var(--crit); }
+.band[data-level="partial"] .stripe { background: var(--warn); }
+.band[data-level="resolved"] .stripe { background: var(--ok); }
+.band-body { padding: 22px 24px; display: grid; gap: 16px; min-width: 0; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 600; background: var(--crit-soft); color: var(--crit); width: fit-content; }
+.band[data-level="partial"] .pill { background: var(--warn-soft); color: var(--warn); }
+.band[data-level="resolved"] .pill { background: var(--ok-soft); color: var(--ok); }
+.headline { font-size: clamp(1.25rem, 2.6vw, 1.7rem); font-weight: 700; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.stat { background: var(--surface-2); padding: 12px 14px; display: grid; gap: 2px; min-width: 0; }
+.stat .v { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stat .v.small { font-size: .95rem; font-weight: 500; font-family: var(--font-body); }
+.summary { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; max-width: 72ch; }
+
+/* panels */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px 22px; display: grid; gap: 14px; min-width: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.inc { display: grid; gap: 8px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface-2); min-width: 0; }
+.inc-head { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+.inc-id { font-family: var(--font-mono); font-weight: 600; font-size: 1.05rem; }
+.inc dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: .86rem; }
+.inc dt { color: var(--muted); }
+.inc dd { margin: 0; min-width: 0; }
+.en { font-family: var(--font-mono); font-size: .8rem; color: var(--muted); line-height: 1.55; }
+
+/* services */
+.svc-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 8px; }
+.svc { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; align-items: start; }
+.svc .ind { width: 9px; height: 9px; border-radius: 50%; margin-top: 8px; background: var(--crit); grid-row: span 2; }
+.svc[data-state="degraded"] .ind { background: var(--warn); }
+.svc[data-state="restored"] .ind { background: var(--ok); }
+.svc[data-state="unknown"] .ind { background: var(--muted); }
+.svc .n { font-weight: 600; font-size: .9rem; }
+.svc .s { font-size: .78rem; color: var(--muted); }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .78rem; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+/* timeline */
+.tl-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { font: inherit; font-size: .8rem; padding: 5px 12px; border: 0; background: var(--surface); color: var(--muted); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.tl { list-style: none; margin: 0; padding: 0; display: grid; }
+.tl li { display: grid; grid-template-columns: 112px 18px 1fr; gap: 0 12px; }
+.tl .time { text-align: right; padding-top: 2px; }
+.tl .time .d { display: block; font-size: .72rem; color: var(--muted); }
+.tl .time .h { font-family: var(--font-mono); font-weight: 600; font-size: .95rem; font-variant-numeric: tabular-nums; }
+.tl .rail { position: relative; display: flex; justify-content: center; }
+.tl .rail::before { content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.tl li:first-child .rail::before { top: 10px; }
+.tl li:last-child .rail::before { bottom: auto; height: 10px; }
+.tl .node { position: relative; width: 12px; height: 12px; border-radius: 50%; margin-top: 7px; background: var(--accent); border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--accent); }
+.tl li[data-kind="press"] .node { background: var(--surface); box-shadow: 0 0 0 1.5px var(--press); }
+.tl .body { padding-bottom: 18px; min-width: 0; display: grid; gap: 4px; }
+.tag { font-size: .7rem; font-weight: 600; padding: 1px 8px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); width: fit-content; }
+.tag.press { background: var(--press-soft); color: var(--press); }
+.src { font-size: .78rem; color: var(--muted); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+details.orig summary { cursor: pointer; font-size: .78rem; color: var(--muted); width: fit-content; }
+details.orig p { margin: 6px 0 0; padding: 8px 10px; border-left: 2px solid var(--line); }
+
+/* cause */
+.cause { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.cause > div { border-top: 3px solid var(--ok); padding-top: 10px; min-width: 0; }
+.cause > div.inv { border-color: var(--warn); }
+.cause > div.out { border-color: var(--muted); }
+.cause h3 { font-size: .9rem; margin-bottom: 6px; }
+.cause ul, .plain { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; font-size: .9rem; }
+
+.actions { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.actions li { display: grid; grid-template-columns: 64px 1fr; gap: 10px; font-size: .9rem; align-items: baseline; }
+.who { font-size: .72rem; font-weight: 600; text-align: center; padding: 2px 0; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); }
+.sources { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: .88rem; }
+.sources li { display: flex; gap: 8px; align-items: baseline; min-width: 0; }
+.sources a { overflow-wrap: anywhere; }
+.note { font-size: .8rem; color: var(--muted); max-width: 80ch; }
+.err { background: var(--crit-soft); color: var(--crit); padding: 12px 16px; border-radius: 8px; }
+footer { font-size: .78rem; color: var(--muted); display: grid; gap: 4px; }
+
+@media (max-width: 560px) {
+  .band-body, .panel { padding: 16px; }
+  .tl li { grid-template-columns: 76px 14px 1fr; gap: 0 8px; }
+  .tl .time .h { font-size: .85rem; }
+  .actions li { grid-template-columns: 1fr; gap: 2px; }
+  .who { width: fit-content; padding: 2px 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .brand .dot { animation: pulse 2.4s ease-in-out infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 7px transparent; } }
+}
+</style>
+
+<div class="wrap" id="app">
+  <header class="topbar">
+    <div class="brand" id="brand"><span class="dot" aria-hidden="true"></span>M365 障害トラッカー</div>
+    <div class="updated">
+      <span>最終更新 <b class="mono" id="lastUpdated">—</b></span>
+      <span>次回更新予定 <b class="mono" id="nextUpdate">—</b></span>
+    </div>
+  </header>
+
+  <section class="band" id="band" data-level="major" aria-labelledby="headline">
+    <div class="stripe" aria-hidden="true"></div>
+    <div class="band-body">
+      <span class="pill" id="statusLabel">読み込み中</span>
+      <h1 class="headline" id="headline">公式情報を読み込んでいます</h1>
+      <div class="stats">
+        <div class="stat"><span class="label">発生（日本時間）</span><span class="v" id="started">—</span></div>
+        <div class="stat"><span class="label" id="elapsedLabel">経過時間</span><span class="v" id="elapsed">—</span></div>
+        <div class="stat"><span class="label">公式の復旧見込み</span><span class="v small" id="eta">—</span></div>
+        <div class="stat"><span class="label">追跡中のインシデント</span><span class="v small mono" id="incIds">—</span></div>
+      </div>
+      <ul class="summary" id="summary"></ul>
+    </div>
+  </section>
+
+  <div id="error" hidden class="err"></div>
+
+  <section class="panel" aria-labelledby="h-inc">
+    <h2 id="h-inc">公式インシデント <small>Microsoft 365 管理センター「サービス正常性」の ID</small></h2>
+    <div class="grid-2" id="incidents"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-svc">
+    <h2 id="h-svc">影響サービス <small>MO1550821 の影響一覧（改訂版）に基づく</small></h2>
+    <div class="legend">
+      <span><i style="background:var(--crit)"></i>影響あり</span>
+      <span><i style="background:var(--warn)"></i>一部回復</span>
+      <span><i style="background:var(--ok)"></i>復旧</span>
+      <span><i style="background:var(--muted)"></i>公表なし</span>
+    </div>
+    <div class="svc-list" id="services"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-tl">
+    <h2 id="h-tl">経過 <small>公式発表を軸に、報道は区別して掲載</small></h2>
+    <div class="tl-tools">
+      <div class="seg" role="group" aria-label="表示する時刻帯">
+        <button type="button" id="tz-jst" aria-pressed="true">日本時間</button>
+        <button type="button" id="tz-et" aria-pressed="false">米東部</button>
+        <button type="button" id="tz-utc" aria-pressed="false">UTC</button>
+      </div>
+      <div class="seg" role="group" aria-label="情報源の絞り込み">
+        <button type="button" id="f-all" aria-pressed="true">すべて</button>
+        <button type="button" id="f-off" aria-pressed="false">公式のみ</button>
+      </div>
+      <div class="seg" role="group" aria-label="並び順">
+        <button type="button" id="o-new" aria-pressed="true">新しい順</button>
+        <button type="button" id="o-old" aria-pressed="false">古い順</button>
+      </div>
+    </div>
+    <ol class="tl" id="timeline"></ol>
+  </section>
+
+  <section class="panel" aria-labelledby="h-cause">
+    <h2 id="h-cause">原因について分かっていること</h2>
+    <div class="cause">
+      <div><h3>公式に説明済み</h3><ul id="c-conf"></ul></div>
+      <div class="inv"><h3>調査中・未確定</h3><ul id="c-inv"></ul></div>
+      <div class="out"><h3>否定されている説</h3><ul id="c-out"></ul></div>
+    </div>
+  </section>
+
+  <div class="grid-2">
+    <section class="panel" aria-labelledby="h-jp">
+      <h2 id="h-jp">国内の影響</h2>
+      <ul class="plain" id="japan"></ul>
+    </section>
+    <section class="panel" aria-labelledby="h-ww">
+      <h2 id="h-ww">海外の影響</h2>
+      <ul class="plain" id="worldwide"></ul>
+    </section>
+  </div>
+
+  <section class="panel" aria-labelledby="h-act">
+    <h2 id="h-act">いま取るべき対応</h2>
+    <ul class="actions" id="actions"></ul>
+  </section>
+
+  <section class="panel" aria-labelledby="h-src">
+    <h2 id="h-src">情報源</h2>
+    <ul class="sources" id="sources"></ul>
+    <p class="note" id="researchNote"></p>
+  </section>
+
+  <section class="panel" aria-labelledby="h-log">
+    <h2 id="h-log">このページの更新履歴 <small>約 1 時間ごとに公式情報を再確認</small></h2>
+    <ul class="plain" id="changelog"></ul>
+  </section>
+
+  <footer>
+    <span>このページは Microsoft とは関係のない個人の整理ページです。正式な状況は Microsoft 365 管理センターのサービス正常性で確認してください。</span>
+    <span>ページを開いたままでも 5 分ごとに最新データを読み直します。</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var state = { tz: "jst", filter: "all", order: "new", data: null };
+  var TZ = { jst: "Asia/Tokyo", et: "America/New_York", utc: "UTC" };
+  var TZLABEL = { jst: "JST", et: "ET", utc: "UTC" };
+  var $ = function (id) { return document.getElementById(id); };
+
+  try { var saved = JSON.parse(localStorage.getItem("m365tracker") || "{}"); Object.assign(state, { tz: saved.tz || state.tz, filter: saved.filter || state.filter, order: saved.order || state.order }); } catch (e) {}
+  function save() { try { localStorage.setItem("m365tracker", JSON.stringify({ tz: state.tz, filter: state.filter, order: state.order })); } catch (e) {} }
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function parts(iso, tz) {
+    var d = new Date(iso);
+    var f = new Intl.DateTimeFormat("ja-JP", { timeZone: TZ[tz], month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false });
+    var o = {}; f.formatToParts(d).forEach(function (p) { o[p.type] = p.value; });
+    return { date: o.month + "/" + o.day, time: o.hour + ":" + o.minute };
+  }
+  function fmt(iso, tz) { if (!iso) return "—"; var p = parts(iso, tz || "jst"); return p.date + " " + p.time; }
+  function dur(ms) {
+    if (ms < 0) ms = 0;
+    var m = Math.floor(ms / 60000), h = Math.floor(m / 60), d = Math.floor(h / 24);
+    return (d ? d + "日 " : "") + (h % 24) + "時間 " + String(m % 60).padStart(2, "0") + "分";
+  }
+  var LEVEL = { major: "major", partial: "partial", resolved: "resolved" };
+  var SVC = { impacted: "影響あり", degraded: "一部回復", restored: "復旧", unknown: "公表なし" };
+
+  function renderTick() {
+    var d = state.data; if (!d) return;
+    var start = new Date(d.status.startedAt).getTime();
+    var end = d.status.resolvedAt ? new Date(d.status.resolvedAt).getTime() : Date.now();
+    $("elapsed").textContent = dur(end - start);
+    $("elapsedLabel").textContent = d.status.resolvedAt ? "障害継続時間" : "発生からの経過";
+  }
+
+  function renderTimeline() {
+    var d = state.data; if (!d) return;
+    var items = d.timeline.slice().filter(function (x) { return state.filter === "all" || x.kind === "official"; });
+    items.sort(function (a, b) { return state.order === "new" ? new Date(b.t) - new Date(a.t) : new Date(a.t) - new Date(b.t); });
+    $("timeline").innerHTML = items.map(function (x) {
+      var p = parts(x.t, state.tz);
+      var src = x.url ? '<a href="' + esc(x.url) + '" target="_blank" rel="noopener">' + esc(x.source) + "</a>" : esc(x.source);
+      return '<li data-kind="' + esc(x.kind) + '">' +
+        '<div class="time"><span class="d">' + p.date + " " + TZLABEL[state.tz] + '</span><span class="h">' + p.time + "</span></div>" +
+        '<div class="rail"><span class="node"></span></div>' +
+        '<div class="body"><span class="tag' + (x.kind === "press" ? " press" : "") + '">' + (x.kind === "press" ? "報道" : "公式") + "</span>" +
+        "<div>" + esc(x.ja) + "</div>" +
+        '<div class="src">' + src + "</div>" +
+        (x.en ? '<details class="orig"><summary>原文（英語）</summary><p class="en">' + esc(x.en) + "</p></details>" : "") +
+        "</div></li>";
+    }).join("");
+    [["tz-jst", state.tz === "jst"], ["tz-et", state.tz === "et"], ["tz-utc", state.tz === "utc"], ["f-all", state.filter === "all"], ["f-off", state.filter === "official"], ["o-new", state.order === "new"], ["o-old", state.order === "old"]]
+      .forEach(function (b) { $(b[0]).setAttribute("aria-pressed", String(b[1])); });
+  }
+
+  function render(d) {
+    state.data = d;
+    var lvl = LEVEL[d.status.level] || "major";
+    $("band").dataset.level = lvl;
+    $("brand").classList.toggle("ok", lvl === "resolved");
+    $("statusLabel").textContent = d.status.label;
+    $("headline").textContent = d.status.headline;
+    $("started").textContent = fmt(d.status.startedAt, "jst");
+    $("eta").textContent = d.status.resolvedAt ? "復旧済み（" + fmt(d.status.resolvedAt, "jst") + "）" : d.status.etaText;
+    $("incIds").textContent = d.incidents.map(function (i) { return i.id; }).join(" / ");
+    $("summary").innerHTML = d.status.summary.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("");
+    $("lastUpdated").textContent = fmt(d.meta.lastUpdated, "jst") + " JST";
+    var next = new Date(new Date(d.meta.lastUpdated).getTime() + d.meta.updateIntervalMinutes * 60000).toISOString();
+    $("nextUpdate").textContent = fmt(next, "jst") + " 頃";
+
+    $("incidents").innerHTML = d.incidents.map(function (i) {
+      return '<article class="inc"><div class="inc-head"><span class="inc-id">' + esc(i.id) + '</span><span class="label">' + esc(i.service) + "</span></div>" +
+        "<h3>" + esc(i.titleJa) + "</h3><p class=\"en\" style=\"margin:0\">" + esc(i.title) + "</p>" +
+        "<dl><dt>状態</dt><dd>" + esc(i.state) + "</dd><dt>開始</dt><dd class=\"mono\">" + fmt(i.startedAt, "jst") + " JST</dd><dt>範囲</dt><dd>" + esc(i.scope) + "</dd></dl></article>";
+    }).join("");
+
+    $("services").innerHTML = d.services.map(function (s) {
+      return '<div class="svc" data-state="' + esc(s.state) + '"><span class="ind" aria-hidden="true"></span><span class="n">' + esc(s.name) + '</span><span class="s">' + esc(SVC[s.state] || s.state) + (s.note ? "・" + esc(s.note) : "") + "</span></div>";
+    }).join("");
+
+    var li = function (a) { return a.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join(""); };
+    $("c-conf").innerHTML = li(d.cause.confirmed);
+    $("c-inv").innerHTML = li(d.cause.underInvestigation);
+    $("c-out").innerHTML = li(d.cause.ruledOut);
+    $("japan").innerHTML = d.japan.map(function (j) { return "<li>" + (j.t ? '<span class="mono">' + fmt(j.t, "jst") + "</span> " : "") + esc(j.text) + (j.kind === "press" ? "（報道）" : "") + "</li>"; }).join("");
+    $("worldwide").innerHTML = li(d.worldwide) ;
+    $("actions").innerHTML = d.actions.map(function (a) { return '<li><span class="who">' + esc(a.who) + "</span><span>" + esc(a.text) + "</span></li>"; }).join("");
+    $("sources").innerHTML = d.sources.map(function (s) { return '<li><span class="tag' + (s.kind === "press" ? " press" : "") + '">' + (s.kind === "press" ? "報道" : "公式") + '</span><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a></li>"; }).join("");
+    $("researchNote").textContent = d.meta.researchNote;
+    $("changelog").innerHTML = d.changelog.slice().sort(function (a, b) { return new Date(b.t) - new Date(a.t); }).map(function (c) { return '<li><span class="mono">' + fmt(c.t, "jst") + "</span> " + esc(c.text) + "</li>"; }).join("");
+
+    renderTimeline();
+    renderTick();
+  }
+
+  function load() {
+    fetch("data.json?ts=" + Date.now(), { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { $("error").hidden = true; render(d); })
+      .catch(function (e) {
+        if (!state.data) { $("error").hidden = false; $("error").textContent = "最新データを読み込めませんでした（" + e.message + "）。ページを再読み込みしてください。"; }
+      });
+  }
+
+  function bind(id, key, val) { $(id).addEventListener("click", function () { state[key] = val; save(); renderTimeline(); }); }
+  bind("tz-jst", "tz", "jst"); bind("tz-et", "tz", "et"); bind("tz-utc", "tz", "utc");
+  bind("f-all", "filter", "all"); bind("f-off", "filter", "official");
+  bind("o-new", "order", "new"); bind("o-old", "order", "old");
+
+  load();
+  setInterval(load, 5 * 60 * 1000);
+  setInterval(renderTick, 30 * 1000);
+})();
+</script>
