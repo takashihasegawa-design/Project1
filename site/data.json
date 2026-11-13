@@ -1,24 +1,24 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T05:25:00Z",
+    "lastUpdated": "2026-11-13T06:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 4,
+    "updateCount": 5,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "major",
     "label": "障害継続中（一部回復）",
-    "headline": "Microsoft 365 の世界規模の接続障害は発生から 13 時間を超えて継続。回復の兆しはあるが、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の世界規模の接続障害は 14 時間目に。トラフィック制御を適用した地域から部分的に回復しているが、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
-      "一部のサーバーはサービスに復帰しましたが、Microsoft は「復帰したサーバーがトラフィックを受けると再び応答しなくなる場合がある」としていました。10:59（日本時間）の公式更新では、基盤を隔離した形で再起動する方法で「良い結果が出ている」とし、安定性を確認したうえで対応を広げる方針です。その後、回復中の地域向けに処理能力を追加していると報じられています。",
+      "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。10:59 には隔離した再起動で「良い結果」、13:36（日本時間）の公式更新では、通信プロトコルの調整、トラフィックの再分散、戦略的な遮断措置を適用したリージョンで「部分的な回復」を確認したとしています。",
       "10:01（日本時間）の公式更新で影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。"
     ],
     "startedAt": "2026-11-12T16:17:00Z",
     "resolvedAt": null,
     "etaText": "公式の復旧見込み時刻：未公表（次回の情報更新は 15:00／15:30 予定と報道）",
-    "cyberattack": "Microsoft はサイバー攻撃を示す兆候はないとしている（報道）"
+    "cyberattack": "日本マイクロソフト：「サイバー攻撃を示唆する事実は確認されていない」（日経報道）"
   },
   "incidents": [
     {
@@ -292,6 +292,14 @@
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
       "ja": "14:10 時点で全面復旧と根本原因の発表はなし。発生から約 13 時間。Microsoft は次回の情報更新を 15:00 と 15:30（日本時間）に予定していると報道。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T04:36:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121099952633840043",
+      "ja": "トラフィックの流れを改善するため、サーバーの安定性向上を継続。通信プロトコルの調整、トラフィックの再分散、戦略的なトラフィック遮断措置を実施。これらを適用したリージョンで部分的な回復を確認。",
+      "en": "We’re continuing our efforts to improve server stability to improve traffic flow. This includes adjusting traffic protocols, redistributing traffic, and applying strategic traffic blocking measures. We're observing partial recovery across regions in which we've applied t…（以下省略）"
     }
   ],
   "cause": {
@@ -307,7 +315,7 @@
       "再応答不能を引き起こす要因（診断データを分析中）"
     ],
     "ruledOut": [
-      "サイバー攻撃：Microsoft はその兆候はないとしている（報道経由）"
+      "サイバー攻撃：日本マイクロソフト広報が「サイバー攻撃を示唆する事実は確認されていない」と説明（日本経済新聞）。米国でも同趣旨の説明が報じられている"
     ]
   },
   "japan": [
@@ -434,6 +442,11 @@
       "label": "ITmedia ビジネスオンライン：「Microsoft 365」で大規模障害、メールやWeb会議に影響 原因と復旧状況は？",
       "url": "https://www.itmedia.co.jp/business/articles/2611/13/news067.html",
       "kind": "press"
+    },
+    {
+      "label": "日本経済新聞：マイクロソフト365大規模障害、「サイバー攻撃を示唆する事実ない」",
+      "url": "https://www.nikkei.com/article/DGXZQOGN12CY20S6A111C2000000/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -452,6 +465,10 @@
     {
       "t": "2026-11-13T05:25:00Z",
       "text": "新しい公式発表は確認できず（最新は 10:59）。14:10 時点で全面復旧なしとの報道、次回の情報更新予定（15:00／15:30）を追加"
+    },
+    {
+      "t": "2026-11-13T06:25:00Z",
+      "text": "新しい公式発表（トラフィック制御を適用した地域で部分回復）を追加。日本マイクロソフトの「サイバー攻撃を示唆する事実はない」との説明（日経報道）を反映"
     }
   ]
 }
