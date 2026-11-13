@@ -1,14 +1,14 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T04:25:00Z",
+    "lastUpdated": "2026-11-13T05:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 3,
+    "updateCount": 4,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "major",
     "label": "障害継続中（一部回復）",
-    "headline": "Microsoft 365 の世界規模の接続障害は発生から 12 時間を超えて継続。隔離した再起動で回復の兆しはあるが、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の世界規模の接続障害は発生から 13 時間を超えて継続。回復の兆しはあるが、全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
@@ -17,7 +17,7 @@
     ],
     "startedAt": "2026-11-12T16:17:00Z",
     "resolvedAt": null,
-    "etaText": "公式の復旧見込み時刻：未公表",
+    "etaText": "公式の復旧見込み時刻：未公表（次回の情報更新は 15:00／15:30 予定と報道）",
     "cyberattack": "Microsoft はサイバー攻撃を示す兆候はないとしている（報道）"
   },
   "incidents": [
@@ -284,6 +284,14 @@
       "url": "https://x.com/MSFT365Status/status/2120926975690744054",
       "ja": "【先行した別件】TM1550488：緩和策によりサービスの正常性と機能が回復し、顧客への影響は完全に解消。Microsoft は今回の大規模障害との関係を示していない。",
       "en": "Our mitigative actions have successfully restored service health and functionality. Customer impact is now fully resolved. Additional information can be found under TM1550488 in the Microsoft 365 admin center."
+    },
+    {
+      "t": "2026-11-13T05:10:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "14:10 時点で全面復旧と根本原因の発表はなし。発生から約 13 時間。Microsoft は次回の情報更新を 15:00 と 15:30（日本時間）に予定していると報道。",
+      "en": ""
     }
   ],
   "cause": {
@@ -421,6 +429,11 @@
       "label": "日経クロステック：Microsoft 365大規模障害、復旧難航",
       "url": "https://xtech.nikkei.com/atcl/nxt/news/24/03467/",
       "kind": "press"
+    },
+    {
+      "label": "ITmedia ビジネスオンライン：「Microsoft 365」で大規模障害、メールやWeb会議に影響 原因と復旧状況は？",
+      "url": "https://www.itmedia.co.jp/business/articles/2611/13/news067.html",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -435,6 +448,10 @@
     {
       "t": "2026-11-13T04:25:00Z",
       "text": "10:59 以降、MO1550821／EX1550543 に新しい公式発表は確認できず。先行した北米 Teams 障害 TM1550488（解決済み）の公式投稿 2 件と、Teams の利用状況（報道）を追加"
+    },
+    {
+      "t": "2026-11-13T05:25:00Z",
+      "text": "新しい公式発表は確認できず（最新は 10:59）。14:10 時点で全面復旧なしとの報道、次回の情報更新予定（15:00／15:30）を追加"
     }
   ]
 }
