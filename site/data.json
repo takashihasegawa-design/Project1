@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T21:24:00Z",
+    "lastUpdated": "2026-11-13T22:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 19,
+    "updateCount": 20,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -711,6 +711,11 @@
       "label": "CBC：Microsoft 'deeply sorry' for multi-day outage",
       "url": "https://cbc.ca/news/world/livestory/microsoft-outage-outlook-teams-copilot-9.7420354",
       "kind": "press"
+    },
+    {
+      "label": "TechRadar（ライブ）：Outlook and Teams returning to 'normal levels'",
+      "url": "https://www.techradar.com/news/live/outlook-outage-nov-2026",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -789,6 +794,10 @@
     {
       "t": "2026-11-13T21:24:00Z",
       "text": "定期確認。新しい公式発表・解決宣言・事後レビューは確認できず。内容の変更なし"
+    },
+    {
+      "t": "2026-11-13T22:24:00Z",
+      "text": "定期確認。MO1550821 の解決宣言・新しい公式発表は確認できず。米メディアは「通常レベルに戻りつつある」と報道（正式な終息宣言ではない）"
     }
   ]
 }
