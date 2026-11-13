@@ -1,23 +1,23 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T06:25:00Z",
+    "lastUpdated": "2026-11-13T07:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 5,
+    "updateCount": 6,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
     "level": "major",
     "label": "障害継続中（一部回復）",
-    "headline": "Microsoft 365 の世界規模の接続障害は 14 時間目に。トラフィック制御を適用した地域から部分的に回復しているが、全面復旧の宣言はまだ出ていない",
+    "headline": "Microsoft 365 の世界規模の接続障害は 15 時間目に。一部地域で部分回復しているが、持続的な回復には至っておらず全面復旧の宣言はまだ出ていない",
     "summary": [
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
       "Microsoft は原因について、トラフィック増ではなく「多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りの基盤に負荷が集中した」と説明しています。根本原因はまだ確定していません。",
-      "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。10:59 には隔離した再起動で「良い結果」、13:36（日本時間）の公式更新では、通信プロトコルの調整、トラフィックの再分散、戦略的な遮断措置を適用したリージョンで「部分的な回復」を確認したとしています。",
+      "一部のサーバーは復帰しましたが、トラフィックを受けると再び応答しなくなる事象が続きました。10:59 には隔離した再起動で「良い結果」、13:36（日本時間）の公式更新では、通信プロトコルの調整、トラフィックの再分散、戦略的な遮断措置を適用したリージョンで「部分的な回復」を確認したとしています。 その後も、フロントエンド サーバーの復旧とトラフィック最適化を続けているとの更新（15:12）が出ていますが、持続的な回復はまだ確認されていません。",
       "10:01（日本時間）の公式更新で影響サービスの一覧が改訂され、Planner、To Do、Intune、Defender for Office 365、Purview の一部、Power BI の一部などが追加されました。全面復旧の見込み時刻は公表されていません。"
     ],
     "startedAt": "2026-11-12T16:17:00Z",
     "resolvedAt": null,
-    "etaText": "公式の復旧見込み時刻：未公表（次回の情報更新は 15:00／15:30 予定と報道）",
+    "etaText": "公式の復旧見込み時刻：未公表",
     "cyberattack": "日本マイクロソフト：「サイバー攻撃を示唆する事実は確認されていない」（日経報道）"
   },
   "incidents": [
@@ -300,6 +300,22 @@
       "url": "https://x.com/MSFT365Status/status/2121099952633840043",
       "ja": "トラフィックの流れを改善するため、サーバーの安定性向上を継続。通信プロトコルの調整、トラフィックの再分散、戦略的なトラフィック遮断措置を実施。これらを適用したリージョンで部分的な回復を確認。",
       "en": "We’re continuing our efforts to improve server stability to improve traffic flow. This includes adjusting traffic protocols, redistributing traffic, and applying strategic traffic blocking measures. We're observing partial recovery across regions in which we've applied t…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T05:01:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121106039277805729",
+      "ja": "影響の緩和、現在の障壁（ブロッカー）への対処、サービス基盤の一部を正常な状態に戻す作業など、複数の作業を並行して進めている。詳細は管理センターの MO1550821 または status.cloud.microsoft。",
+      "en": "We're engaged in multiple workstreams to alleviate impact, address our current blocker, and returning portions of service infrastructure back to a healthy state. A more comprehensive update can be found at MO1550821 in the Microsoft 365 admin center, as well as https://t…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T06:12:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121123916496146821",
+      "ja": "フロントエンド サーバーの復旧作業を継続しつつ、サービスの安定性向上と容量拡大のため、さらなるトラフィック最適化措置を実施している。",
+      "en": "We're continuing to work on recovering our frontend servers while implementing further traffic optimization actions to improve service stability and increase capacity. A more comprehensive update can be found at MO1550821 in the Microsoft 365 admin center, as well as htt…（以下省略）"
     }
   ],
   "cause": {
@@ -307,7 +323,8 @@
       "高負荷の原因はトラフィック増ではない（公式）",
       "多数のサーバーが自動ヘルスチェックに失敗して予期せず利用不能になり、残りのサーバーに負荷が集中した（公式）",
       "影響サーバー上のコア プロセスが過負荷になり、容量が失われている（公式）",
-      "復帰させたサーバーが、トラフィックを受けると再び応答しなくなる場合がある（公式）"
+      "復帰させたサーバーが、トラフィックを受けると再び応答しなくなる場合がある（公式）",
+      "影響を受けているのはフロントエンド サーバーで、その復旧作業が続いている（公式）"
     ],
     "underInvestigation": [
       "ヘルスチェック失敗は、サーバー正常性を処理する特定コンポーネントに起因する可能性（公式は「可能性」と表現）",
@@ -447,6 +464,11 @@
       "label": "日本経済新聞：マイクロソフト365大規模障害、「サイバー攻撃を示唆する事実ない」",
       "url": "https://www.nikkei.com/article/DGXZQOGN12CY20S6A111C2000000/",
       "kind": "press"
+    },
+    {
+      "label": "IT-Connect：Microsoft 365 Outage: Outlook, Teams and Copilot Down",
+      "url": "https://www.it-connect.tech/microsoft-365-outage-hits-outlook-teams-and-copilot-for-11-hours/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -469,6 +491,10 @@
     {
       "t": "2026-11-13T06:25:00Z",
       "text": "新しい公式発表（トラフィック制御を適用した地域で部分回復）を追加。日本マイクロソフトの「サイバー攻撃を示唆する事実はない」との説明（日経報道）を反映"
+    },
+    {
+      "t": "2026-11-13T07:25:00Z",
+      "text": "公式の X 投稿 2 件（複数の作業を並行、フロントエンド サーバーの復旧とトラフィック最適化）を追加。15:30 時点で全面復旧なし（報道）"
     }
   ]
 }
