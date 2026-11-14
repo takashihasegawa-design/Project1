@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-14T05:24:00Z",
+    "lastUpdated": "2026-11-14T06:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 27,
+    "updateCount": 28,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -500,6 +500,14 @@
       "url": "https://news.yahoo.co.jp/articles/e5620ac542a652d15695a99de12ea6483c6d7ff5",
       "ja": "個人向けサービスが完全復旧したと発表（米東部 13日 23:10＝日本時間 14日 13:10）。法人向け Microsoft 365（MO1550821）の全面復旧の宣言は確認できていない。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T15:39:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121266712884416537",
+      "ja": "【後から確認できた投稿】影響を受けた基盤のうち、より広い範囲でサービス可用性とメール配信性能が改善している。顧客が日々の重要な業務を当社サービスに頼っていることを理解しており、影響を遺憾に思う。",
+      "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected infrastructure. We know our customers rely on our services to get important work done every day, and regret the impact thes…（以下省略）"
     }
   ],
   "cause": {
@@ -790,6 +798,11 @@
       "label": "共同通信（Yahoo!ニュース）：マイクロソフト、個人向けサービス完全復旧",
       "url": "https://news.yahoo.co.jp/articles/e5620ac542a652d15695a99de12ea6483c6d7ff5",
       "kind": "press"
+    },
+    {
+      "label": "時事ドットコム：大規模障害、復旧進む 根本原因は対処―米マイクロソフト",
+      "url": "https://www.jiji.com/jc/article?k=2026111400263&g=int&m=rss",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -900,6 +913,10 @@
     {
       "t": "2026-11-14T05:24:00Z",
       "text": "個人向けサービスの完全復旧発表（14日 13:10 日本時間、共同通信経由）を追加。法人向け MO1550821 の解決宣言・PIR は未確認"
+    },
+    {
+      "t": "2026-11-14T06:24:00Z",
+      "text": "見落としていた公式投稿（11/14 00:39：回復が広範囲に、影響を遺憾に思う）を補完。法人向け MO1550821 の解決宣言・PIR は引き続き未確認"
     }
   ]
 }
