@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-14T02:24:00Z",
+    "lastUpdated": "2026-11-14T03:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 24,
+    "updateCount": 25,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -766,6 +766,11 @@
       "label": "テレビ朝日系（ANN）：マイクロソフトの大規模障害「広範囲で復旧 安定し始める」",
       "url": "https://news.yahoo.co.jp/articles/21f68271fe3a4926cfdd0deefbd2989a7f15d421",
       "kind": "press"
+    },
+    {
+      "label": "TBS NEWS DIG：「サービス全体で復旧が進み、安定した状態」全面復旧の見通しは明らかにせず",
+      "url": "https://news.yahoo.co.jp/articles/aa5875f38a1fdc835547978b3406d4094ddb3534",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -864,6 +869,10 @@
     {
       "t": "2026-11-14T02:24:00Z",
       "text": "定期確認。14日 03:05 の謝罪投稿以降、新しい公式発表・全面復旧の宣言・事後レビューは確認できず。内容の変更なし"
+    },
+    {
+      "t": "2026-11-14T03:24:00Z",
+      "text": "定期確認。新しい公式発表・全面復旧の宣言・事後レビューは確認できず。国内報道（TBS）を情報源に追加"
     }
   ]
 }
