@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-14T03:24:00Z",
+    "lastUpdated": "2026-11-14T04:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 25,
+    "updateCount": 26,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -771,6 +771,11 @@
       "label": "TBS NEWS DIG：「サービス全体で復旧が進み、安定した状態」全面復旧の見通しは明らかにせず",
       "url": "https://news.yahoo.co.jp/articles/aa5875f38a1fdc835547978b3406d4094ddb3534",
       "kind": "press"
+    },
+    {
+      "label": "Impress Watch：Microsoft 365、接続障害からおおむね回復 後日詳細を報告へ",
+      "url": "https://news.yahoo.co.jp/articles/9503593b8682ab9d69220abeb9ef30a602dbe8f2",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -873,6 +878,10 @@
     {
       "t": "2026-11-14T03:24:00Z",
       "text": "定期確認。新しい公式発表・全面復旧の宣言・事後レビューは確認できず。国内報道（TBS）を情報源に追加"
+    },
+    {
+      "t": "2026-11-14T04:24:00Z",
+      "text": "定期確認。新しい公式発表・全面復旧の宣言・事後レビューは確認できず。国内報道は「おおむね回復、後日詳細を報告へ」（Impress Watch）"
     }
   ]
 }
