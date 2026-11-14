@@ -1,16 +1,16 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-14T07:30:00Z",
+    "lastUpdated": "2026-11-14T08:28:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 29,
+    "updateCount": 30,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
-    "level": "partial",
-    "label": "全面復旧と報道（公式通知を確認中）",
-    "headline": "共同通信：Microsoft が個人向け・企業向けともに全面復旧したと発表。公式投稿と MO1550821 の解決通知はまだ確認できていない",
+    "level": "resolved",
+    "label": "復旧（Microsoft が解決を発表）",
+    "headline": "Microsoft が全面復旧を発表：根本的な問題への対処を完了し、残る顧客・地域のサービスを復旧（11/14 15:09 日本時間）。今後は事後レビュー（PIR）の公表待ち",
     "summary": [
-      "【最新】共同通信によると、Microsoft は米東部時間 14日、個人向け・企業向けともにサービスが全面復旧したと発表しました。個人向けは先に 14日 01:10（日本時間）に完全復旧しています。Microsoft の公式投稿と、管理センターの MO1550821 の解決通知はまだ確認できていません。事後レビュー（PIR）は今後公表される予定です。",
+      "【解決】Microsoft は 11月14日 15:09（日本時間）、根本的な問題への対処を完了し、残っていた影響を受けた顧客・リージョンのサービスを復旧したと公式に発表しました。発生（13日 01:17）から約 38 時間です。根本原因と再発防止策は事後レビュー（PIR）で公表される予定です。",
       "【最新】Microsoft は 13日（米国時間）に謝罪し、原因を「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」と説明しました。根本の原因には対処済みで、一部の顧客への復旧を続けています。影響を受けた顧客はサービスクレジットを申請できます（報道経由）。",
       "14日 01:40（日本時間）、Microsoft は広範囲にわたる復旧がみられると発表しました。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性があります。Microsoft は謝罪し、報告書を公表するとしています（NHK・日本経済新聞）。",
       "Microsoft の記録では、障害は 2026年11月13日 01:17（日本時間）に Exchange Online（EX1550543）で始まり、03:26 に Microsoft 365 全体のインシデント（MO1550821）へ拡大しました。",
@@ -24,8 +24,8 @@
       "遅延メールを保全するため、Microsoft はメールのタイムアウトを 48 時間に延長しました。根本原因と再発防止策は、障害の緩和後に事後レビュー（Post-Incident Report）で公表するとしています（報道）。"
     ],
     "startedAt": "2026-11-12T16:17:00Z",
-    "resolvedAt": null,
-    "etaText": "全面復旧と報道（共同通信）。公式の解決通知は確認中",
+    "resolvedAt": "2026-11-14T06:09:00Z",
+    "etaText": "復旧済み。事後レビュー（PIR）の公表待ち",
     "cyberattack": "Microsoft：サイバー攻撃でも AI エージェントによるものでもない"
   },
   "incidents": [
@@ -35,7 +35,7 @@
       "title": "Users may be unable to access Exchange Online mailboxes through multiple connection methods",
       "titleJa": "複数の接続方法で Exchange Online のメールボックスにアクセスできない場合がある",
       "classification": "インシデント",
-      "state": "サービス低下（調査・復旧中）",
+      "state": "復旧（11/14 15:09 公式発表）",
       "startedAt": "2026-11-12T16:17:00Z",
       "scope": "当初は南北アメリカ。のちに全リージョンで影響の可能性と案内。Outlook on the web、デスクトップ／モバイル版 Outlook、MAPI、Exchange ActiveSync、REST API 経由の接続が影響を受けた。"
     },
@@ -45,7 +45,7 @@
       "title": "Users may be unable to connect to multiple Microsoft 365 services",
       "titleJa": "複数の Microsoft 365 サービスに接続できない場合がある",
       "classification": "インシデント",
-      "state": "サービス低下（調査・復旧中）",
+      "state": "復旧（11/14 15:09 公式発表）",
       "startedAt": "2026-11-12T18:26:00Z",
       "scope": "任意のリージョンのユーザーで Microsoft 365 サービスへの接続に影響の可能性。基盤の一部で複数リージョンにまたがる高負荷が発生。"
     },
@@ -64,73 +64,73 @@
     {
       "name": "Exchange Online / Outlook",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": "メールキューは大幅に減少し通常レベルに近づく（23:17 公式）。断続的なアクセス障害・遅延は残る可能性"
     },
     {
       "name": "Microsoft Teams",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": "通話・会議・チャット・チャネルなど主要機能の大半は影響なし。Exchange に依存する機能（予定表など）は影響あり（MO1550821、報道経由）"
     },
     {
       "name": "SharePoint Online",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": ""
     },
     {
       "name": "Microsoft 365 Copilot",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": ""
     },
     {
       "name": "Microsoft Planner",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": "影響一覧に追加"
     },
     {
       "name": "Microsoft To Do",
       "group": "コア",
-      "state": "degraded",
+      "state": "restored",
       "note": "影響一覧に追加"
     },
     {
       "name": "Microsoft Defender XDR",
       "group": "セキュリティ",
-      "state": "impacted",
+      "state": "restored",
       "note": ""
     },
     {
       "name": "Defender for Office 365",
       "group": "セキュリティ",
-      "state": "impacted",
+      "state": "restored",
       "note": "Safe Links が URL を検証できない場合がある（報道）"
     },
     {
       "name": "Microsoft Intune",
       "group": "管理",
-      "state": "impacted",
+      "state": "restored",
       "note": "10:01 の改訂で追加"
     },
     {
       "name": "Microsoft Purview（一部）",
       "group": "コンプライアンス",
-      "state": "impacted",
+      "state": "restored",
       "note": "認可、自動ラベル付け、DLP、コミュニケーション コンプライアンス、データ分類"
     },
     {
       "name": "Power BI（一部）",
       "group": "分析",
-      "state": "impacted",
+      "state": "restored",
       "note": "秘密度ラベル付きレポートの PDF エクスポートが断続的に失敗"
     },
     {
       "name": "Microsoft 365 Apps 管理センター（一部）",
       "group": "管理",
-      "state": "impacted",
+      "state": "restored",
       "note": "Cloud Update、Cloud Policy、Inventory"
     },
     {
@@ -510,12 +510,20 @@
       "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected infrastructure. We know our customers rely on our services to get important work done every day, and regret the impact thes…（以下省略）"
     },
     {
-      "t": "2026-11-14T07:00:00Z",
+      "t": "2026-11-14T06:09:00Z",
       "kind": "press",
-      "source": "報道（共同通信、発表時刻は不明）",
+      "source": "報道（共同通信）",
       "url": "https://news.yahoo.co.jp/articles/889b53545bfb5cf66dd10d620dd22f6365ba7a66",
-      "ja": "Microsoft が米東部時間 14日、個人向け・企業向けともにサービスが全面復旧したと発表したと共同通信が報道。Microsoft の公式投稿・管理センターの解決通知はまだ確認できていない（経過上の時刻は記事確認時点の目安）。",
+      "ja": "共同通信が、Microsoft は個人向け・企業向けともにサービスが全面復旧したと発表したと報道。",
       "en": ""
+    },
+    {
+      "t": "2026-11-14T06:09:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121485746334777593",
+      "ja": "【解決】インシデントの根本的な問題への対処を完了し、残っていた影響を受けた顧客・リージョンのサービスを復旧した。今後の更新は管理センターの MO1550821 で。",
+      "en": "We have completed our efforts to address the underlying issue of the incident and restored service to the remaining impacted customers and regions. Further updates can be found at MO1550821 in the Microsoft 365 admin center."
     }
   ],
   "cause": {
@@ -584,23 +592,19 @@
   "actions": [
     {
       "who": "管理者",
-      "text": "Microsoft 365 管理センター → 正常性 → サービス正常性 で MO1550821 と EX1550543 を確認する。管理センターに入れない場合は status.cloud.microsoft と X の @MSFT365Status を見る"
+      "text": "管理センターの MO1550821／EX1550543 で最終状態と事後レビュー（PIR）の公表を確認する。PIR には根本原因と再発防止策が記載される予定"
     },
     {
       "who": "管理者",
-      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。契約の SLA 条件と申請方法を Microsoft 365 管理センターまたは担当窓口で確認する"
+      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。SLA 条件と申請方法を確認する"
     },
     {
       "who": "管理者",
-      "text": "MO1550821 の「詳細情報」欄で、自組織が使う機能（Intune、Purview DLP、Power BI のエクスポートなど）が影響一覧に含まれるか照合する"
+      "text": "Intune のデバイス登録・コンプライアンス評価、Purview DLP、Defender の検知など、障害中に処理されなかった可能性のある項目を点検する"
     },
     {
       "who": "全員",
       "text": "障害中に送ったメールは、復旧後に遅れて届く場合がある。Microsoft はメールのタイムアウトを 48 時間に延長しており（公式）、遅延メールが期限切れで失われにくくなっている。重要なメールは復旧後に届いたか相手と確認する"
-    },
-    {
-      "who": "管理者",
-      "text": "復旧はクライアントの再接続に伴って段階的に進むため、利用者には Outlook／Teams の再起動を案内し、個別の再設定や再インストールは控えてもらう"
     },
     {
       "who": "全員",
@@ -612,6 +616,11 @@
     }
   ],
   "sources": [
+    {
+      "label": "Microsoft 365 Status（X）：解決の発表",
+      "url": "https://x.com/MSFT365Status/status/2121485746334777593",
+      "kind": "official"
+    },
     {
       "label": "Microsoft 365 Status（X）：謝罪と原因説明の投稿",
       "url": "https://x.com/MSFT365Status/status/2121303408313303423",
@@ -826,6 +835,11 @@
       "label": "共同通信（Yahoo!ニュース）：米MS、個人向け障害復旧 企業向けは作業継続",
       "url": "https://news.yahoo.co.jp/articles/597d325a2a040852a1b55c93f85f3209d0306f3c",
       "kind": "press"
+    },
+    {
+      "label": "CBS News：Microsoft says it has \"restored\" service and addressed \"underlying issue\"",
+      "url": "https://www.cbsnews.com/news/microsoft-battling-major-outage/",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -944,6 +958,10 @@
     {
       "t": "2026-11-14T07:30:00Z",
       "text": "共同通信が「個人・企業向けとも全面復旧」と報道したことを反映（公式通知は確認中のため状態は「回復傾向」のまま）。個人向け完全復旧の時刻を 14日 13:10 から 01:10（日本時間）に訂正。国内影響に大塚製薬などを追加"
+    },
+    {
+      "t": "2026-11-14T08:28:00Z",
+      "text": "Microsoft の公式解決発表（11/14 15:09）を確認し、状態を「復旧」に変更。全サービスを「復旧」に、対応欄を復旧後向けに更新。経過時間の計測を停止"
     }
   ]
 }
