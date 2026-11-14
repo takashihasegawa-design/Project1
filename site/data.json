@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-13T23:25:00Z",
+    "lastUpdated": "2026-11-14T00:24:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 21,
+    "updateCount": 22,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -748,6 +748,11 @@
       "label": "朝日新聞（Yahoo!ニュース）：日本は「比較的安定状態」に",
       "url": "https://news.yahoo.co.jp/articles/d2db8300ba543f40f0228994c065f5f28dbdb002",
       "kind": "press"
+    },
+    {
+      "label": "テレビ朝日系（ANN）：マイクロソフトの大規模障害「広範囲で復旧 安定し始める」",
+      "url": "https://news.yahoo.co.jp/articles/21f68271fe3a4926cfdd0deefbd2989a7f15d421",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -834,6 +839,10 @@
     {
       "t": "2026-11-13T23:25:00Z",
       "text": "14日 01:40 の Microsoft 発表（広範囲で復旧）と 05:15 時点の報道を追加。謝罪声明の時刻を 14日 02:57（日本時間）に確定し修正。全面復旧の宣言はなし"
+    },
+    {
+      "t": "2026-11-14T00:24:00Z",
+      "text": "定期確認。新しい公式発表・全面復旧の宣言・事後レビューは確認できず。国内報道は「広範囲で復旧、安定し始める」で一致"
     }
   ]
 }
