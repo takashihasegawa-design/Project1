@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-14T00:24:00Z",
+    "lastUpdated": "2026-11-14T01:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 22,
+    "updateCount": 23,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -461,12 +461,12 @@
       "en": "We’re continuing to see improvements in service availability, with email queues significantly reduced and approaching normal levels. Some users may still experience intermittent access issues or delayed email delivery as recovery continues. We’ve implemented additional m…（以下省略）"
     },
     {
-      "t": "2026-11-13T17:57:00Z",
+      "t": "2026-11-13T18:05:00Z",
       "kind": "official",
-      "source": "Microsoft の声明（報道経由）",
-      "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
-      "ja": "Microsoft が障害について謝罪（「深くお詫びする」）。原因は「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」ものと説明。根本の原因には対処済みで、一部の顧客への復旧作業を続けている。サイバー攻撃でも AI エージェントによるものでもないとし、影響を受けた顧客はサービスクレジットを申請できるとした。",
-      "en": ""
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121303408313303423",
+      "ja": "【謝罪】顧客とパートナーに与えた混乱を深くお詫びする。サービス全体で広範な回復と安定が見られる。技術的な問題によるもので、以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した（原因部分は報道による補足）。根本の原因には対処済みで、残る顧客・地域の復旧を続ける。サイバー攻撃や AI エージェントによるものではない。影響を受けた顧客はサービスクレジットを申請できる（報道）。",
+      "en": "We are deeply sorry for the disruption this incident has caused our customers and partners. We know the trust they place in our services and take that responsibility extremely seriously. We are seeing broad recovery and stability across our services. This was a technica…（以下省略）"
     },
     {
       "t": "2026-11-13T16:40:00Z",
@@ -482,6 +482,14 @@
       "source": "報道（国内メディア）",
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
       "ja": "14日 05:15 時点で全面復旧の発表はなし。個人向けサービスでは遅れたメールが後から届く見通し。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T20:00:00Z",
+      "kind": "press",
+      "source": "報道（日本テレビ系）",
+      "url": "https://news.infoseek.co.jp/article/ntv_2026111403686311/",
+      "ja": "14日 05:00 すぎ、「完全復旧のめどは現時点で未定」。根本的な問題への対処は完了し、復旧作業を順次進めていると報道。",
       "en": ""
     }
   ],
@@ -574,6 +582,11 @@
     }
   ],
   "sources": [
+    {
+      "label": "Microsoft 365 Status（X）：謝罪と原因説明の投稿",
+      "url": "https://x.com/MSFT365Status/status/2121303408313303423",
+      "kind": "official"
+    },
     {
       "label": "Microsoft 365 Status（X 公式アカウント）",
       "url": "https://x.com/MSFT365Status",
@@ -843,6 +856,10 @@
     {
       "t": "2026-11-14T00:24:00Z",
       "text": "定期確認。新しい公式発表・全面復旧の宣言・事後レビューは確認できず。国内報道は「広範囲で復旧、安定し始める」で一致"
+    },
+    {
+      "t": "2026-11-14T01:25:00Z",
+      "text": "謝罪声明の公式 X 投稿を特定し、経過の出典を報道から公式に差し替え（時刻も投稿 ID から確定）。「完全復旧のめどは未定」との報道を追加。全面復旧の宣言・事後レビューはまだ"
     }
   ]
 }
