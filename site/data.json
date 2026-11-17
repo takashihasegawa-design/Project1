@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-17T14:25:00Z",
+    "lastUpdated": "2026-11-17T15:28:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 108,
+    "updateCount": 109,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -11,6 +11,7 @@
     "headline": "Microsoft が全面復旧を発表：根本的な問題への対処を完了し、残る顧客・地域のサービスを復旧（11/14 15:09 日本時間）。今後は事後レビュー（PIR）の公表待ち",
     "summary": [
       "【解決】Microsoft は 11月14日 15:09（日本時間）、根本的な問題への対処を完了し、残っていた影響を受けた顧客・リージョンのサービスを復旧したと公式に発表しました。発生（13日 01:17）から約 38 時間です。根本原因と再発防止策は事後レビュー（PIR）で公表される予定です。",
+      "【注意喚起】Microsoft は、今回の障害に便乗して「保留されたメールを復元」と装うフィッシングが出回っていると警告しました（Khaleej Times、Times of Oman、Mimecast ほか）。",
       "【11/17 追記・未確認】暫定の事後レビューの内容として、「安全な接続を確立するシステムの潜在バグが、ネットワーク保守・増強に伴うトラフィック移動で表面化した」とする二次報道が出ています。Microsoft の原文は確認できていないため、確定情報としては扱っていません。",
       "【最新】Microsoft は 13日（米国時間）に謝罪し、原因を「以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した」と説明しました。根本の原因には対処済みで、一部の顧客への復旧を続けています。影響を受けた顧客はサービスクレジットを申請できます（報道経由）。",
       "14日 01:40（日本時間）、Microsoft は広範囲にわたる復旧がみられると発表しました。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性があります。Microsoft は謝罪し、報告書を公表するとしています（NHK・日本経済新聞）。",
@@ -587,6 +588,7 @@
     }
   ],
   "worldwide": [
+    "Microsoft Threat Intelligence：11月13日、障害中にメールが保留されたと装い、24 時間以内のリンククリックを促すフィッシングを確認（報道）。Mimecast・Field Effect も同種の偽メール、SMS、偽 IT サポート電話を報告",
     "米ニューヨーク市緊急事態管理局：市機関へのメールや Microsoft システムに依存する市のオンラインサービスで遅延や一時的な障害が起こりうると告知",
     "米オハイオ州サミット郡：メールの代わりに電話での連絡を呼びかけ",
     "Defender for Office 365 の Safe Links が URL を検証できない場合があり、Outlook や Teams でのリンククリックに影響の可能性",
@@ -595,6 +597,10 @@
     "米国では 13日昼（米東部）ごろにメールの受信が戻り始めた利用者が多いと報道（ABC News）"
   ],
   "actions": [
+    {
+      "who": "全員",
+      "text": "【注意】Microsoft Threat Intelligence が、今回の障害に便乗したフィッシングを確認（報道）。「障害中に保留されたメールがある。24 時間以内にリンクから復元しないと削除される」と装う偽メールで、件名は「Outage - （6 文字のコード）」、差出人表示は「Outage Notification」「Service Health」など。Microsoft は障害情報を管理センターのサービス正常性で案内しており、メールのリンクは開かない"
+    },
     {
       "who": "管理者",
       "text": "管理センターの MO1550821／EX1550543 で最終状態と事後レビュー（PIR）の公表を確認する。PIR には根本原因と再発防止策が記載される予定"
@@ -854,6 +860,26 @@
     {
       "label": "SmartScope：Microsoft 365 outage status update — secure connection process（報道）",
       "url": "https://smartscope.blog/en/blog/microsoft-365-outage-status-update-secure-connection-process-2026/",
+      "kind": "press"
+    },
+    {
+      "label": "Khaleej Times：Microsoft finds active phishing campaign exploiting service disruption",
+      "url": "https://www.khaleejtimes.com/business/tech/microsoft-finds-active-phishing-campaign-exploiting-service-disruption",
+      "kind": "press"
+    },
+    {
+      "label": "Times of Oman：Microsoft restores 365 services globally after disruption; warns of phishing campaign",
+      "url": "https://timesofoman.com/article/179167-microsoft-restores-365-services-globally-after-disruption-warns-of-phishing-campaign-exploiting-outage",
+      "kind": "press"
+    },
+    {
+      "label": "Mimecast：Attackers Exploit the Microsoft 365 Outage with Fake \"Held Messages\" Lures",
+      "url": "https://www.mimecast.com/blog/attackers-exploit-the-microsoft-365-outage-with-fake-held-messages-lures/",
+      "kind": "press"
+    },
+    {
+      "label": "Field Effect：Microsoft 365 outage theme",
+      "url": "https://fieldeffect.com/blog/microsoft-365-outage-theme",
       "kind": "press"
     }
   ],
@@ -1289,6 +1315,10 @@
     {
       "t": "2026-11-17T14:25:00Z",
       "text": "定期確認。PIR 原文は依然確認できず。内容の変更なし"
+    },
+    {
+      "t": "2026-11-17T15:28:00Z",
+      "text": "障害に便乗したフィッシング（「保留メールの復元」を装う）を Microsoft が警告したとの複数報道を、概要・対応・世界の影響に追加。PIR 原文は依然確認できず"
     }
   ]
 }
