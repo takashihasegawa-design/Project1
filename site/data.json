@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-17T11:28:00Z",
+    "lastUpdated": "2026-11-17T12:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 105,
+    "updateCount": 106,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -541,6 +541,7 @@
     "underInvestigation": [
       "【未確認・二次情報】Microsoft の暫定的な根本原因は「安全な接続を確立するシステムに潜在していたバグが、ネットワーク保守・増強に伴うトラフィック移動で表面化し、新規接続要求を完了できずキューに滞留した」とする分析記事がある（FourWeekMBA。Microsoft は「根本原因の分析は継続中」と表現、と同記事）。Microsoft の原文・他の報道では未確認",
       "【未確認・二次情報】同記事によると、Microsoft の記録上の影響時間は約 23 時間 50 分。公式投稿の最初から復旧投稿までは約 36 時間",
+      "【部分的な裏付け】障害中の公式更新で「影響サーバー上の安全な接続を確立するプロセスが過負荷になり、要求を処理できなくなった」と説明されていたとする報道あり（SmartScope）。上記の「安全な接続を確立するシステム」の説明と整合するが、潜在バグ・ネットワーク保守との因果は Microsoft 原文で未確認",
       "修正パッチの対象は「上流の認証・ルーティング コンポーネント」。これが根本原因かどうかは公表されていない（MO1550821 の更新、報道経由）",
       "ヘルスチェック失敗は、サーバー正常性を処理する特定コンポーネントに起因する可能性（公式は「可能性」と表現）",
       "再応答不能を引き起こす要因（診断データを分析中）",
@@ -848,6 +849,11 @@
     {
       "label": "FourWeekMBA：Microsoft 365 Root Cause: Latent Bug Behind 36-Hour Outage（二次分析・未確認）",
       "url": "https://fourweekmba.com/ai-microsoft-365-root-cause-latent-bug-behind-36-hour-outage/",
+      "kind": "press"
+    },
+    {
+      "label": "SmartScope：Microsoft 365 outage status update — secure connection process（報道）",
+      "url": "https://smartscope.blog/en/blog/microsoft-365-outage-status-update-secure-connection-process-2026/",
       "kind": "press"
     }
   ],
@@ -1271,6 +1277,10 @@
     {
       "t": "2026-11-17T11:28:00Z",
       "text": "暫定原因（安全な接続を確立するシステムの潜在バグ）を伝える二次報道を「未確認」として原因欄と概要に追加。Microsoft の原文・PIR は未確認"
+    },
+    {
+      "t": "2026-11-17T12:25:00Z",
+      "text": "「安全な接続を確立するプロセスが過負荷」とする障害中の公式更新を伝える報道を、暫定原因の部分的な裏付けとして追加。PIR 原文は未確認のまま"
     }
   ]
 }
