@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-20T01:26:00Z",
+    "lastUpdated": "2026-11-20T02:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 167,
+    "updateCount": 168,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -936,6 +936,11 @@
       "label": "Xurrent：Microsoft 365 障害のタイムライン・障害様式・対応の分析",
       "url": "https://www.xurrent.com/blog/microsoft-365-outage",
       "kind": "press"
+    },
+    {
+      "label": "チャールズ・ラマンナ氏（Microsoft EVP）の X 投稿：根本原因の要約と謝罪（詳細は管理センター）",
+      "url": "https://x.com/clamanna/status/2122209697226948729",
+      "kind": "official"
     }
   ],
   "changelog": [
@@ -1606,6 +1611,10 @@
     {
       "t": "2026-11-20T01:26:00Z",
       "text": "原因欄に暫定 PIR の対策（コードを安定版に戻す・容量拡張・連鎖障害の安全策）を追加（報道経由）。最終版 PIR は未公開（11/20 予定）"
+    },
+    {
+      "t": "2026-11-20T02:25:00Z",
+      "text": "定期確認。出典にラマンナ氏の X 投稿（原文）を追加。最終版 PIR は未公開（11/20 予定）"
     }
   ]
 }
