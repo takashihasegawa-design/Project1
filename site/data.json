@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-19T23:24:00Z",
+    "lastUpdated": "2026-11-20T00:28:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 165,
+    "updateCount": 166,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -602,7 +602,8 @@
     "Defender for Office 365 の Safe Links が URL を検証できない場合があり、Outlook や Teams でのリンククリックに影響の可能性",
     "Microsoft の幹部が、今回の障害はセキュリティ侵害によるものではないと確認（BleepingComputer 報道）",
     "障害による経済損失は 70 億ドルを超える可能性があるとの試算（CNN 報道）",
-    "米国では 13日昼（米東部）ごろにメールの受信が戻り始めた利用者が多いと報道（ABC News）"
+    "米国では 13日昼（米東部）ごろにメールの受信が戻り始めた利用者が多いと報道（ABC News）",
+    "ドイツ・ブリュール（Phantasialand 併設の Hotel Ling Bao）：11/13（金）、プールの塩素注入装置が故障して塩素ガスが発生し、宿泊客 15 人が負傷（報道経由。WDR の報道と消防の発表を各誌が引用）。監視システムは警告メールを送ったが、Outlook の障害で届かなかったとされる。装置の故障自体は障害と無関係で、障害は通知経路を断った形。搬送者数は報道により 4〜5 人と異なる"
   ],
   "actions": [
     {
@@ -913,6 +914,21 @@
     {
       "label": "Next INpact：Post Incident Report（暫定 PIR の PDF 掲載）",
       "url": "https://next.ink/wp-content/uploads/2026/11/PostIncidentReport.pdf",
+      "kind": "press"
+    },
+    {
+      "label": "TechRadar：障害で塩素警告メールが届かずホテル宿泊客 15 人が負傷",
+      "url": "https://www.techradar.com/computing/microsoft-365-outage-led-to-chlorine-gas-poisoning-of-15-hotel-guests-in-germany-as-microsoft-says-crash-was-caused-by-cascading-failure-rather-than-cyberattack",
+      "kind": "press"
+    },
+    {
+      "label": "Security Affairs：Microsoft 障害でホテル宿泊客 15 人が塩素中毒",
+      "url": "https://securityaffairs.com/203189/security/the-microsoft-outage-left-15-hotel-guests-poisoned-by-chlorine.html",
+      "kind": "press"
+    },
+    {
+      "label": "Cybernews：障害で塩素警告がブロックされ宿泊客が病院へ",
+      "url": "https://cybernews.com/security/microsoft-outage-chlorine-poisoning/",
       "kind": "press"
     }
   ],
@@ -1576,6 +1592,10 @@
     {
       "t": "2026-11-19T23:24:00Z",
       "text": "定期確認。最終版 PIR は未公開（11/20 予定）。内容の変更なし"
+    },
+    {
+      "t": "2026-11-20T00:28:00Z",
+      "text": "世界の影響に、ドイツのホテルで警告メールが障害で届かず塩素ガスで宿泊客 15 人が負傷した件を追加（報道経由）。最終版 PIR は未公開（11/20 予定）"
     }
   ]
 }
