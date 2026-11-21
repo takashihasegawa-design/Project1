@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-21T07:25:00Z",
+    "lastUpdated": "2026-11-21T08:27:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 197,
+    "updateCount": 198,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -144,12 +144,36 @@
   ],
   "timeline": [
     {
+      "t": "2026-11-12T01:07:00Z",
+      "kind": "press",
+      "source": "WindowsForum（暫定 PIR の解説、報道経由）",
+      "url": "https://windowsforum.com/news/microsoft-365-outage-exposes-shared-cloud-risks-why-failover-spread-the-exchange-failure.453494/",
+      "ja": "Teams が別系統のゲートウェイから、Exchange Online と共用の主系ゲートウェイへフェイルオーバー（日本時間 10:07、報道による時刻）。暫定 PIR の「障害の約 15 時間前」と整合する。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-12T15:40:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120904489209143320",
+      "ja": "【先行した別件】北米で Microsoft Teams の機能へのアクセス・利用に問題が出ているという報告を調査中（TM1550488）。",
+      "en": "We're investigating reports of users experiencing issues when accessing or using Microsoft Teams functionality in North America, and more details can be found in the Microsoft 365 admin center under TM1550488."
+    },
+    {
       "t": "2026-11-12T16:17:00Z",
       "kind": "official",
       "source": "サービス正常性 EX1550543",
       "url": "",
       "ja": "Microsoft が記録した Exchange Online インシデントの開始時刻（米東部 11:17）。",
       "en": ""
+    },
+    {
+      "t": "2026-11-12T17:09:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2120926975690744054",
+      "ja": "【先行した別件】TM1550488：緩和策によりサービスの正常性と機能が回復し、顧客への影響は完全に解消。Microsoft は今回の大規模障害との関係を示していない。",
+      "en": "Our mitigative actions have successfully restored service health and functionality. Customer impact is now fully resolved. Additional information can be found under TM1550488 in the Microsoft 365 admin center."
     },
     {
       "t": "2026-11-12T17:54:00Z",
@@ -248,6 +272,14 @@
       "en": "The servers we returned to service can become unresponsive again once they receive traffic; we're analyzing diagnostic data to determine what's triggering the behavior. In parallel, we're temporarily limiting which types of traffic can reach the affected infrastructure i…（以下省略）"
     },
     {
+      "t": "2026-11-13T00:22:00Z",
+      "kind": "press",
+      "source": "NTT東日本（公式 X）",
+      "url": "https://x.com/NTTeastofficial/status/2121036002521489605",
+      "ja": "NTT東日本が、Microsoft 365 の障害により 116、113 などのサービスや各種受付・問い合わせの一部に影響が出ていると発表。",
+      "en": ""
+    },
+    {
       "t": "2026-11-13T01:01:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
@@ -280,28 +312,12 @@
       "en": ""
     },
     {
-      "t": "2026-11-12T15:40:00Z",
+      "t": "2026-11-13T03:13:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2120904489209143320",
-      "ja": "【先行した別件】北米で Microsoft Teams の機能へのアクセス・利用に問題が出ているという報告を調査中（TM1550488）。",
-      "en": "We're investigating reports of users experiencing issues when accessing or using Microsoft Teams functionality in North America, and more details can be found in the Microsoft 365 admin center under TM1550488."
-    },
-    {
-      "t": "2026-11-12T17:09:00Z",
-      "kind": "official",
-      "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2120926975690744054",
-      "ja": "【先行した別件】TM1550488：緩和策によりサービスの正常性と機能が回復し、顧客への影響は完全に解消。Microsoft は今回の大規模障害との関係を示していない。",
-      "en": "Our mitigative actions have successfully restored service health and functionality. Customer impact is now fully resolved. Additional information can be found under TM1550488 in the Microsoft 365 admin center."
-    },
-    {
-      "t": "2026-11-13T05:10:00Z",
-      "kind": "press",
-      "source": "報道（国内メディア）",
-      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
-      "ja": "14:10 時点で全面復旧と根本原因の発表はなし。発生から約 13 時間。Microsoft は次回の情報更新を 15:00 と 15:30（日本時間）に予定していると報道。",
-      "en": ""
+      "url": "https://x.com/MSFT365Status/status/2121079061774491735",
+      "ja": "【後から確認できた投稿】サービス性改善のために適用した変更の状況を監視した結果、想定どおりに効いていないことを確認。持続的なトラフィック管理の不均衡に対し、容量を増やすための別の作業を特定している。",
+      "en": "We’ve monitored the status of the changes applied to improve serviceability and confirmed they're not taking as expected. We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances. More info un…（以下省略）"
     },
     {
       "t": "2026-11-13T04:36:00Z",
@@ -320,28 +336,20 @@
       "en": "We're engaged in multiple workstreams to alleviate impact, address our current blocker, and returning portions of service infrastructure back to a healthy state. A more comprehensive update can be found at MO1550821 in the Microsoft 365 admin center, as well as https://t…（以下省略）"
     },
     {
+      "t": "2026-11-13T05:10:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "14:10 時点で全面復旧と根本原因の発表はなし。発生から約 13 時間。Microsoft は次回の情報更新を 15:00 と 15:30（日本時間）に予定していると報道。",
+      "en": ""
+    },
+    {
       "t": "2026-11-13T06:12:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
       "url": "https://x.com/MSFT365Status/status/2121123916496146821",
       "ja": "フロントエンド サーバーの復旧作業を継続しつつ、サービスの安定性向上と容量拡大のため、さらなるトラフィック最適化措置を実施している。",
       "en": "We're continuing to work on recovering our frontend servers while implementing further traffic optimization actions to improve service stability and increase capacity. A more comprehensive update can be found at MO1550821 in the Microsoft 365 admin center, as well as htt…（以下省略）"
-    },
-    {
-      "t": "2026-11-13T07:44:00Z",
-      "kind": "official",
-      "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121147053484937596",
-      "ja": "最新のトラフィック最適化措置により、サービスの安定性と容量の増加で良い結果が出ている。持続的な回復を目指し、これらの措置を影響を受けた各リージョンへ広く展開している。",
-      "en": "We’re seeing positive results for service stability and increased capacity as a result of our latest traffic optimization actions. We're implementing these actions more broadly across affected regions as we seek to attain persistent recovery. A more comprehensive update…（以下省略）"
-    },
-    {
-      "t": "2026-11-13T07:40:00Z",
-      "kind": "press",
-      "source": "報道（国内メディア）",
-      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
-      "ja": "16:40 時点で全面復旧はなし。Microsoft が、認証と経路設定に関わる部品に修正を当てた一部の設備でサーバー安定に手応えが出ていると発表したと報道（管理センターの MO1550821 の内容とみられる）。",
-      "en": ""
     },
     {
       "t": "2026-11-13T07:24:00Z",
@@ -352,27 +360,27 @@
       "en": ""
     },
     {
+      "t": "2026-11-13T07:40:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "16:40 時点で全面復旧はなし。Microsoft が、認証と経路設定に関わる部品に修正を当てた一部の設備でサーバー安定に手応えが出ていると発表したと報道（管理センターの MO1550821 の内容とみられる）。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T07:44:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121147053484937596",
+      "ja": "最新のトラフィック最適化措置により、サービスの安定性と容量の増加で良い結果が出ている。持続的な回復を目指し、これらの措置を影響を受けた各リージョンへ広く展開している。",
+      "en": "We’re seeing positive results for service stability and increased capacity as a result of our latest traffic optimization actions. We're implementing these actions more broadly across affected regions as we seek to attain persistent recovery. A more comprehensive update…（以下省略）"
+    },
+    {
       "t": "2026-11-13T08:06:00Z",
       "kind": "official",
       "source": "サービス正常性 MO1550821（報道経由で確認）",
       "url": "https://www.tokenpost.com/news/technology/56461",
       "ja": "修正の展開を体系的に拡大中。ピークの業務時間帯にある、または近づいているリージョンから優先して適用し、回復しつつあるリージョンを支えるサーバーにも順次広げる。",
-      "en": ""
-    },
-    {
-      "t": "2026-11-13T00:22:00Z",
-      "kind": "press",
-      "source": "NTT東日本（公式 X）",
-      "url": "https://x.com/NTTeastofficial/status/2121036002521489605",
-      "ja": "NTT東日本が、Microsoft 365 の障害により 116、113 などのサービスや各種受付・問い合わせの一部に影響が出ていると発表。",
-      "en": ""
-    },
-    {
-      "t": "2026-11-13T09:55:00Z",
-      "kind": "press",
-      "source": "報道（窓の杜）",
-      "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2156298.html",
-      "ja": "18:55 時点で安定化の兆候はあるが完全復旧には至っていない。復旧中にやり取りされたメールを保全する措置も取られていると報道。",
       "en": ""
     },
     {
@@ -384,12 +392,28 @@
       "en": "We’re seeing early stabilization and capacity improvements as recovery actions continue. To help preserve delayed mail during this event, we’ve extended email timeout to 48 hours. A more comprehensive update can be found at MO1550821 in the Microsoft 365 admin center, as…（以下省略）"
     },
     {
+      "t": "2026-11-13T09:55:00Z",
+      "kind": "press",
+      "source": "報道（窓の杜）",
+      "url": "https://forest.watch.impress.co.jp/docs/serial/yajiuma/2156298.html",
+      "ja": "18:55 時点で安定化の兆候はあるが完全復旧には至っていない。復旧中にやり取りされたメールを保全する措置も取られていると報道。",
+      "en": ""
+    },
+    {
       "t": "2026-11-13T09:57:00Z",
       "kind": "official",
       "source": "サービス正常性 MO1550821（報道経由で確認）",
       "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
       "ja": "いくつかの機能で改善が見られるが、容量はまだ通常の水準に戻っていない。次回更新は 20:00（日本時間）予定。",
       "en": ""
+    },
+    {
+      "t": "2026-11-13T10:28:00Z",
+      "kind": "official",
+      "source": "Microsoft 365 Status（X）",
+      "url": "https://x.com/MSFT365Status/status/2121188436769956078",
+      "ja": "【後から確認できた投稿】影響を受けた基盤全体で復旧作業を段階的に進めている。いくつかのワークロードで段階的な改善が見られるが、サービスの正常性はばらつきがあり、容量はまだ通常水準に戻っていない。遅延メールを保護するため…（以下省略）",
+      "en": "Recovery actions are ongoing across affected Microsoft 365 infrastructure and progressing in phases. We’re seeing incremental improvement in several workloads, but service health remains variable and capacity has not yet fully returned to baseline. To protect delayed mai…（以下省略）"
     },
     {
       "t": "2026-11-13T11:11:00Z",
@@ -416,12 +440,12 @@
       "en": ""
     },
     {
-      "t": "2026-11-13T03:13:00Z",
+      "t": "2026-11-13T12:09:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121079061774491735",
-      "ja": "【後から確認できた投稿】サービス性改善のために適用した変更の状況を監視した結果、想定どおりに効いていないことを確認。持続的なトラフィック管理の不均衡に対し、容量を増やすための別の作業を特定している。",
-      "en": "We’ve monitored the status of the changes applied to improve serviceability and confirmed they're not taking as expected. We’re identifying alternate workstreams that can be applied to increase capacity in the face of sustained traffic management imbalances. More info un…（以下省略）"
+      "url": "https://x.com/MSFT365Status/status/2121213845490336163",
+      "ja": "【後から確認できた投稿】有望な回復の進展。影響を受けた基盤のうち、より広い範囲でサービス可用性とメール配信性能が改善。一部の利用者では断続的な問題が続く可能性がある。",
+      "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure. Some users may still experience intermittent issues as recovery actions continue. We’re focus…（以下省略）"
     },
     {
       "t": "2026-11-13T12:40:00Z",
@@ -432,28 +456,12 @@
       "en": ""
     },
     {
-      "t": "2026-11-13T10:28:00Z",
-      "kind": "official",
-      "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121188436769956078",
-      "ja": "【後から確認できた投稿】影響を受けた基盤全体で復旧作業を段階的に進めている。いくつかのワークロードで段階的な改善が見られるが、サービスの正常性はばらつきがあり、容量はまだ通常水準に戻っていない。遅延メールを保護するため…（以下省略）",
-      "en": "Recovery actions are ongoing across affected Microsoft 365 infrastructure and progressing in phases. We’re seeing incremental improvement in several workloads, but service health remains variable and capacity has not yet fully returned to baseline. To protect delayed mai…（以下省略）"
-    },
-    {
       "t": "2026-11-13T13:32:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
       "url": "https://x.com/MSFT365Status/status/2121234739562450970",
       "ja": "影響を受けたリージョン全体で回復が続いている。北米ではより広範な改善、欧州の大部分では持続的な改善、アジア太平洋でも有望な回復の兆候。一部の利用者では断続的なアクセス障害やメール配信の遅延が続く場合がある。",
       "en": "We’re seeing continued recovery progress across affected regions, with broader improvements in North America, sustained improvements across much of Europe, and encouraging recovery signals in Asia Pacific. Some users may still experience intermittent access issues or del…（以下省略）"
-    },
-    {
-      "t": "2026-11-13T12:09:00Z",
-      "kind": "official",
-      "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121213845490336163",
-      "ja": "【後から確認できた投稿】有望な回復の進展。影響を受けた基盤のうち、より広い範囲でサービス可用性とメール配信性能が改善。一部の利用者では断続的な問題が続く可能性がある。",
-      "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected Microsoft 365 infrastructure. Some users may still experience intermittent issues as recovery actions continue. We’re focus…（以下省略）"
     },
     {
       "t": "2026-11-13T14:17:00Z",
@@ -464,36 +472,12 @@
       "en": "We’re continuing to see improvements in service availability, with email queues significantly reduced and approaching normal levels. Some users may still experience intermittent access issues or delayed email delivery as recovery continues. We’ve implemented additional m…（以下省略）"
     },
     {
-      "t": "2026-11-13T18:05:00Z",
+      "t": "2026-11-13T15:39:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121303408313303423",
-      "ja": "【謝罪】顧客とパートナーに与えた混乱を深くお詫びする。サービス全体で広範な回復と安定が見られる。技術的な問題によるもので、以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した（原因部分は報道による補足）。根本の原因には対処済みで、残る顧客・地域の復旧を続ける。サイバー攻撃や AI エージェントによるものではない。影響を受けた顧客はサービスクレジットを申請できる（報道）。",
-      "en": "We are deeply sorry for the disruption this incident has caused our customers and partners. We know the trust they place in our services and take that responsibility extremely seriously. We are seeing broad recovery and stability across our services. This was a technica…（以下省略）"
-    },
-    {
-      "t": "2026-11-13T16:40:00Z",
-      "kind": "official",
-      "source": "Microsoft 発表（報道経由：NHK・日本経済新聞）",
-      "url": "https://news.web.nhk/newsweb/na/nd-20261114de75755",
-      "ja": "広範囲にわたる復旧がみられると発表（14日 01:40 日本時間）。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性がある。",
-      "en": ""
-    },
-    {
-      "t": "2026-11-13T20:15:00Z",
-      "kind": "press",
-      "source": "報道（国内メディア）",
-      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
-      "ja": "14日 05:15 時点で全面復旧の発表はなし。個人向けサービスでは遅れたメールが後から届く見通し。",
-      "en": ""
-    },
-    {
-      "t": "2026-11-13T20:00:00Z",
-      "kind": "press",
-      "source": "報道（日本テレビ系）",
-      "url": "https://news.infoseek.co.jp/article/ntv_2026111403686311/",
-      "ja": "14日 05:00 すぎ、「完全復旧のめどは現時点で未定」。根本的な問題への対処は完了し、復旧作業を順次進めていると報道。",
-      "en": ""
+      "url": "https://x.com/MSFT365Status/status/2121266712884416537",
+      "ja": "【後から確認できた投稿】影響を受けた基盤のうち、より広い範囲でサービス可用性とメール配信性能が改善している。顧客が日々の重要な業務を当社サービスに頼っていることを理解しており、影響を遺憾に思う。",
+      "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected infrastructure. We know our customers rely on our services to get important work done every day, and regret the impact thes…（以下省略）"
     },
     {
       "t": "2026-11-13T16:10:00Z",
@@ -504,12 +488,36 @@
       "en": ""
     },
     {
-      "t": "2026-11-13T15:39:00Z",
+      "t": "2026-11-13T16:40:00Z",
+      "kind": "official",
+      "source": "Microsoft 発表（報道経由：NHK・日本経済新聞）",
+      "url": "https://news.web.nhk/newsweb/na/nd-20261114de75755",
+      "ja": "広範囲にわたる復旧がみられると発表（14日 01:40 日本時間）。日本の一部では接続しにくい状態やメール配信の遅延が残る可能性がある。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T18:05:00Z",
       "kind": "official",
       "source": "Microsoft 365 Status（X）",
-      "url": "https://x.com/MSFT365Status/status/2121266712884416537",
-      "ja": "【後から確認できた投稿】影響を受けた基盤のうち、より広い範囲でサービス可用性とメール配信性能が改善している。顧客が日々の重要な業務を当社サービスに頼っていることを理解しており、影響を遺憾に思う。",
-      "en": "We’re seeing encouraging recovery progress, with service availability and email delivery performance improving across a growing portion of affected infrastructure. We know our customers rely on our services to get important work done every day, and regret the impact thes…（以下省略）"
+      "url": "https://x.com/MSFT365Status/status/2121303408313303423",
+      "ja": "【謝罪】顧客とパートナーに与えた混乱を深くお詫びする。サービス全体で広範な回復と安定が見られる。技術的な問題によるもので、以前のネットワーク容量増強作業で入り込んだ問題が、最近のネットワーク変更をきっかけに表面化した（原因部分は報道による補足）。根本の原因には対処済みで、残る顧客・地域の復旧を続ける。サイバー攻撃や AI エージェントによるものではない。影響を受けた顧客はサービスクレジットを申請できる（報道）。",
+      "en": "We are deeply sorry for the disruption this incident has caused our customers and partners. We know the trust they place in our services and take that responsibility extremely seriously. We are seeing broad recovery and stability across our services. This was a technica…（以下省略）"
+    },
+    {
+      "t": "2026-11-13T20:00:00Z",
+      "kind": "press",
+      "source": "報道（日本テレビ系）",
+      "url": "https://news.infoseek.co.jp/article/ntv_2026111403686311/",
+      "ja": "14日 05:00 すぎ、「完全復旧のめどは現時点で未定」。根本的な問題への対処は完了し、復旧作業を順次進めていると報道。",
+      "en": ""
+    },
+    {
+      "t": "2026-11-13T20:15:00Z",
+      "kind": "press",
+      "source": "報道（国内メディア）",
+      "url": "https://teleport.jp/dataiscity/news-microsoft-365-outage/",
+      "ja": "14日 05:15 時点で全面復旧の発表はなし。個人向けサービスでは遅れたメールが後から届く見通し。",
+      "en": ""
     },
     {
       "t": "2026-11-14T06:09:00Z",
@@ -951,6 +959,11 @@
     {
       "label": "IBTimes AU：週明けに Outlook・Excel・ログインの不具合報告（未確認）",
       "url": "https://www.ibtimes.com.au/microsoft-365-users-report-fresh-issues-after-outage-1878681",
+      "kind": "press"
+    },
+    {
+      "label": "WindowsForum：フェイルオーバーが Exchange 障害を広げた理由",
+      "url": "https://windowsforum.com/news/microsoft-365-outage-exposes-shared-cloud-risks-why-failover-spread-the-exchange-failure.453494/",
       "kind": "press"
     }
   ],
@@ -1742,6 +1755,10 @@
     {
       "t": "2026-11-21T07:25:00Z",
       "text": "定期確認。最終版 PIR の公開は確認できず（予定日 11/20〈米国時間〉、公開報道なし）。内容の変更なし"
+    },
+    {
+      "t": "2026-11-21T08:27:00Z",
+      "text": "時系列に Teams フェイルオーバーの時刻（11/12 01:07 UTC、報道経由）を追加。最終版 PIR の公開は確認できず"
     }
   ]
 }
