@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-21T12:25:00Z",
+    "lastUpdated": "2026-11-21T13:28:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 202,
+    "updateCount": 203,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -613,7 +613,8 @@
     "障害による経済損失は 70 億ドルを超える可能性があるとの試算（CNN 報道）",
     "米国では 13日昼（米東部）ごろにメールの受信が戻り始めた利用者が多いと報道（ABC News）",
     "ドイツ・ブリュール（Phantasialand 併設の Hotel Ling Bao）：11/13（金）、プールの塩素注入装置が故障して塩素ガスが発生し、宿泊客 15 人が負傷（報道経由。WDR の報道と消防の発表を各誌が引用）。監視システムは警告メールを送ったが、Outlook の障害で届かなかったとされる。装置の故障自体は障害と無関係で、障害は通知経路を断った形。搬送者数は報道により 4〜5 人と異なる",
-    "11/16（月）の週明け、Downdetector で Exchange・ログイン・Excel の不具合報告が再び見られた（報道経由・未確認）。Microsoft は新しいインシデントを認めておらず、公式状態は「稼働中」。前週の障害の余波か、別の問題かは不明"
+    "11/16（月）の週明け、Downdetector で Exchange・ログイン・Excel の不具合報告が再び見られた（報道経由・未確認）。Microsoft は新しいインシデントを認めておらず、公式状態は「稼働中」。前週の障害の余波か、別の問題かは不明",
+    "保険業界の損失推計（報道経由）：推計の幅が大きい。CyberCube は 1 億ドル未満が最も可能性が高く、上限 3.5 億ドルとみる。Morningstar DBRS は 3〜5 億ドル、仲介大手 Acrisure は初期推計で約 7 億ドル。Marsh Re は業界への影響を「最小限」とする。幅が出るのは、保険の待機期間（中小企業で平均約 4 時間、大企業で 12 時間以上）などの契約条件による。比較対象として、2024 年の CrowdStrike 障害の推計は 4〜15 億ドル"
   ],
   "actions": [
     {
@@ -964,6 +965,16 @@
     {
       "label": "WindowsForum：フェイルオーバーが Exchange 障害を広げた理由",
       "url": "https://windowsforum.com/news/microsoft-365-outage-exposes-shared-cloud-risks-why-failover-spread-the-exchange-failure.453494/",
+      "kind": "press"
+    },
+    {
+      "label": "Insurance Business：Microsoft 365 障害の損失推計は最小限〜7 億ドル",
+      "url": "https://www.insurancebusinessmag.com/us/news/cyber/microsoft-365-outage-loss-estimates-range-from-minimal-to-700-million-597443.aspx",
+      "kind": "press"
+    },
+    {
+      "label": "Reinsurance News：CyberCube、保険損失は 1 億ドル未満の見通し",
+      "url": "https://www.reinsurancene.ws/microsoft-365-outage-losses-likely-to-be-less-than-100m-cybercube/",
       "kind": "press"
     }
   ],
@@ -1775,6 +1786,10 @@
     {
       "t": "2026-11-21T12:25:00Z",
       "text": "定期確認。最終版 PIR の公開は確認できず（予定日 11/20〈米国時間〉、公開報道なし）。内容の変更なし"
+    },
+    {
+      "t": "2026-11-21T13:28:00Z",
+      "text": "世界の影響に保険業界の損失推計（1 億ドル未満〜約 7 億ドル、報道経由）を追加。最終版 PIR の公開は確認できず"
     }
   ]
 }
