@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-22T21:25:00Z",
+    "lastUpdated": "2026-11-22T22:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 235,
+    "updateCount": 236,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -1005,6 +1005,16 @@
       "label": "WindowsForum：障害の根本原因、Exchange ゲートウェイのバグが各サービスに連鎖",
       "url": "https://windowsforum.com/news/microsoft-365-outage-root-cause-exchange-gateway-bug-cascaded-across-services.453579/",
       "kind": "press"
+    },
+    {
+      "label": "週刊アスキー：マイクロソフト、Microsoft 365大規模障害の原因を公表 3つの問題が連鎖（暫定版の事後報告の解説）",
+      "url": "https://weekly.ascii.jp/elem/000/004/452/4452048/",
+      "kind": "press"
+    },
+    {
+      "label": "窓の杜：Microsoft 365障害の原因（日本時間11/13 1:20〜11/14 1:10ごろ、暫定版の事後報告）",
+      "url": "https://forest.watch.impress.co.jp/docs/news/2156753.html",
+      "kind": "press"
     }
   ],
   "changelog": [
@@ -1947,6 +1957,10 @@
     {
       "t": "2026-11-22T21:25:00Z",
       "text": "定期確認。新しい公式発表・報道なし。内容の変更なし"
+    },
+    {
+      "t": "2026-11-22T22:25:00Z",
+      "text": "情報源に国内報道2件（週刊アスキー・窓の杜、いずれも暫定版の事後報告の解説）を追加。新しい公式発表なし。本文の変更なし"
     }
   ]
 }
