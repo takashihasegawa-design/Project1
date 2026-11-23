@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-23T00:25:00Z",
+    "lastUpdated": "2026-11-23T01:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 238,
+    "updateCount": 239,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -636,7 +636,7 @@
     },
     {
       "who": "管理者",
-      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。SLA 条件と申請方法を確認する"
+      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。複数の報道によると、クレジットは自動では付与されず申請が必要。申請時にはインシデントID（EX1550543／MO1550821）と業務への影響を記載する。クレジットは影響を受けたサービス（例：Exchange Online）の料金を基準に計算され、現金ではなく今後の請求額から差し引かれる（報道経由。正確な条件は Microsoft の SLA 条項で確認）"
     },
     {
       "who": "管理者",
@@ -1014,6 +1014,16 @@
     {
       "label": "窓の杜：Microsoft 365障害の原因（日本時間11/13 1:20〜11/14 1:10ごろ、暫定版の事後報告）",
       "url": "https://forest.watch.impress.co.jp/docs/news/2156753.html",
+      "kind": "press"
+    },
+    {
+      "label": "Office-Watch：30時間に及んだ Microsoft 365 障害、請求できる内容と方法（SLA クレジット）",
+      "url": "https://office-watch.com/?p=78176",
+      "kind": "press"
+    },
+    {
+      "label": "Inc.：Outlook 障害で最大50%のクレジット対象の可能性、ただし自動付与されない",
+      "url": "https://www.inc.com/liyana-illyas/microsoft-outlook-outage-could-qualify-business-50-percent-credit/91436775",
       "kind": "press"
     }
   ],
@@ -1969,6 +1979,10 @@
     {
       "t": "2026-11-23T00:25:00Z",
       "text": "定期確認。新しい公式発表・報道なし。内容の変更なし"
+    },
+    {
+      "t": "2026-11-23T01:25:00Z",
+      "text": "「管理者の対応」の SLA クレジット項目に、報道による申請手順（自動付与なし、インシデントIDを記載、対象サービスの料金基準、請求額から差し引き）を追記。情報源2件を追加。新しい公式発表なし"
     }
   ]
 }
