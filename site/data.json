@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-25T21:25:00Z",
+    "lastUpdated": "2026-11-25T22:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 307,
+    "updateCount": 308,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -643,7 +643,7 @@
     },
     {
       "who": "管理者",
-      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。複数の報道によると、クレジットは自動では付与されず申請が必要。申請時にはインシデントID（EX1550543／MO1550821）と業務への影響を記載する。クレジットは影響を受けたサービス（例：Exchange Online）の料金を基準に計算され、現金ではなく今後の請求額から差し引かれる（報道経由。正確な条件は Microsoft の SLA 条項で確認）。なお Office-Watch によると、家庭向けプラン（Microsoft 365 Personal / Family など）には SLA がなく、クレジットの対象外。申請期限を「12 月末まで」とする専門家の見方もあるが、Microsoft の条項では未確認"
+      "text": "影響を受けた組織はサービスクレジットを申請できる（Microsoft の声明、報道経由）。複数の報道によると、クレジットは自動では付与されず申請が必要。申請時にはインシデントID（EX1550543／MO1550821）と業務への影響を記載する。クレジットは影響を受けたサービス（例：Exchange Online）の料金を基準に計算され、現金ではなく今後の請求額から差し引かれる（報道経由。正確な条件は Microsoft の SLA 条項で確認）。なお Office-Watch によると、家庭向けプラン（Microsoft 365 Personal / Family など）には SLA がなく、クレジットの対象外。申請期限について、Office-Watch などは「障害が起きた月の翌月末」が原則だとし、Microsoft から直接購入した組織は 2026 年 12 月 31 日が期限になると報じている（報道経由。Microsoft の SLA 条項の原文は未確認）。リセラーやパートナー経由で契約している場合は、各社がそれより早い締め切りを設けていることがあるため、早めに確認する。パートナーが申請する場合は、顧客テナントの GUID とインシデント ID が必要（Microsoft Partner Center のドキュメント）"
     },
     {
       "who": "管理者",
@@ -1106,6 +1106,11 @@
       "label": "MSSP Alert：Microsoft 365 の復旧は進むが、セキュリティ・コンプライアンス面の支障は続く",
       "url": "https://www.msspalert.com/news/microsoft-365-recovery-advances-as-security-and-compliance-disruptions-persist",
       "kind": "press"
+    },
+    {
+      "label": "Microsoft Learn（Partner Center）：Microsoft にクレジットを申請する方法と時期",
+      "url": "https://learn.microsoft.com/en-us/partner-center/billing/request-credit",
+      "kind": "official"
     }
   ],
   "changelog": [
@@ -2336,6 +2341,10 @@
     {
       "t": "2026-11-25T21:25:00Z",
       "text": "定期確認。新しい公式発表・報道なし。内容の変更なし"
+    },
+    {
+      "t": "2026-11-25T22:25:00Z",
+      "text": "新しい公式発表なし。SLA クレジットの申請期限を追記：直接契約は 12/31（報道経由、原則は障害月の翌月末）。リセラー経由は締め切りが早い場合があることと、Partner Center の申請手順（公式ドキュメント）も追加"
     }
   ]
 }
