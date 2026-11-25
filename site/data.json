@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-25T18:25:00Z",
+    "lastUpdated": "2026-11-25T19:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 304,
+    "updateCount": 305,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -660,6 +660,10 @@
     {
       "who": "全員",
       "text": "急ぎの連絡は電話や別系統のチャットに切り替える。Safe Links の検証が働かない可能性があるため、不審なリンクは開かない"
+    },
+    {
+      "who": "セキュリティ担当",
+      "text": "報道経由（TechTarget・MSSP Alert）：障害中は一部のセキュリティ監視・フィッシング対策・デバイス管理ツールにアクセスしにくくなった。想定どおりにアラートが届いているかを確認し、メールが止まっても担当者に重大アラートが届く経路（オフラインの連絡手段など）を用意しておく"
     }
   ],
   "sources": [
@@ -1091,6 +1095,16 @@
     {
       "label": "TechCrunch：Microsoft 365 の障害が長期化、改善に向かう（2026/9/1、8 月末の別件 MO1465074）",
       "url": "https://techcrunch.com/2026/09/01/microsoft-365-outage-drags-on-but-things-are-improving/",
+      "kind": "press"
+    },
+    {
+      "label": "TechTarget：Microsoft の障害で、セキュリティ監視と復旧体制が見直しの対象に",
+      "url": "https://www.techtarget.com/news/microsoft-outage-puts-security-monitoring-recovery-under-review/874793/",
+      "kind": "press"
+    },
+    {
+      "label": "MSSP Alert：Microsoft 365 の復旧は進むが、セキュリティ・コンプライアンス面の支障は続く",
+      "url": "https://www.msspalert.com/news/microsoft-365-recovery-advances-as-security-and-compliance-disruptions-persist",
       "kind": "press"
     }
   ],
@@ -2310,6 +2324,10 @@
     {
       "t": "2026-11-25T18:25:00Z",
       "text": "定期確認。新しい公式発表・報道なし。内容の変更なし"
+    },
+    {
+      "t": "2026-11-25T19:25:00Z",
+      "text": "新しい公式発表なし。セキュリティ監視への影響と対策（TechTarget・MSSP Alert の報道）を「対応策」に追加し、出典に 2 件追加"
     }
   ]
 }
