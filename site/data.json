@@ -1,8 +1,8 @@
 {
   "meta": {
-    "lastUpdated": "2026-11-26T05:25:00Z",
+    "lastUpdated": "2026-11-26T06:25:00Z",
     "updateIntervalMinutes": 60,
-    "updateCount": 315,
+    "updateCount": 316,
     "researchNote": "公式情報（Microsoft 365 Status の X 投稿、サービス正常性インシデント MO1550821 / EX1550543）を一次情報とし、報道は「報道」と明記して補足に使っています。X 投稿の時刻は投稿 ID から算出した値です。"
   },
   "status": {
@@ -630,7 +630,8 @@
     "背景（報道経由・出典未特定）：一部報道は、今回の障害を、Microsoft 自身の変更や保守作業が直接の原因となった Microsoft 365 の大規模障害として「今年 4 件目」と報じた。今年はほかに、1 月の約 10 時間に及ぶ北米の障害や、7 月 23 日の地域的な障害も起きている。10 月 6 日にも、利用者から 502・503 エラーの報告が広がった障害があったと報じられている（Cybersecurity News、単一報道）。8 月 31 日〜9 月初めにも、コア認証設定の問題で約 77 時間にわたり Exchange Online・Teams・SharePoint などが使えなくなった障害（MO1465074）があった（TechCrunch など）",
     "英国の公共サービスへの影響（報道経由）：一部の警察でオンラインの犯罪通報が使いにくくなり、一部の NHS（国民保健サービス）組織でメールなどの IT サービスが乱れた。全国薬局協会（NPA）は、NHS のメール障害で処方が遅れるおそれがあると警告した。労組 GMB は救急サービスや NHS トラストへの影響を「深刻」と表現した。一方、英政府のサイバー担当相ロイド・オブ・エフラ男爵夫人は「影響は主に事務部門で、現場のサービス提供への影響の報告は限られている」と述べた。救急対応への影響の全体像は独立に確認されていない",
     "金融・アジア太平洋への影響（報道経由・未確認）：Crypto Briefing によると、金融機関の中には取引の確認をファクスに切り替えたところもあった。障害はアジア太平洋地域にも広がり、日本・シンガポール・オーストラリアの業務にも影響したと報じられている。出典は暗号資産系ニュースサイトで、他の報道では確認できていない",
-    "外部サービスへの波及（報道経由・未確認）：Microsoft 365 と連携する AI サービスのコネクタ（Anthropic、OpenAI など）でも、障害中にエラーが記録されたとする記事がある。出典は個人ブログ（ecorpit）1 件のみ"
+    "外部サービスへの波及（報道経由・未確認）：Microsoft 365 と連携する AI サービスのコネクタ（Anthropic、OpenAI など）でも、障害中にエラーが記録されたとする記事がある。出典は個人ブログ（ecorpit）1 件のみ",
+    "アナリストの見方（報道・調査会社の公開ページ経由）：Gartner は 11/13 付の速報レポート「First Take」で、CIO はこの障害を機にレジリエンスを強化し、単一ベンダーへの依存（集中リスク）を減らすべきだとした。別の速報では「従来型のバックアップだけでは次の M365 障害は防げない」とも指摘している（本文は有料のため、タイトル・要旨のみ確認）。Forrester もブログで、ベンダー集中リスクの解消と、ワークロードを他基盤へ移せる設計や調達先の分散を求めた"
   ],
   "actions": [
     {
@@ -1115,6 +1116,21 @@
     {
       "label": "Office 365 for IT Pros（Tony Redmond）：2026 年 11 月の Exchange Online 大規模障害（11/16、「Microsoft 365 史上でも最大級かつ最も注目された障害の一つ」と評価）",
       "url": "https://office365itpros.com/2026/11/16/exchange-online-outage-nov26/",
+      "kind": "press"
+    },
+    {
+      "label": "Gartner First Take（11/13）：Microsoft 365 障害を受けた CIO 向けの提言（要旨のみ公開）",
+      "url": "https://www.gartner.com/en/documents/8635633",
+      "kind": "press"
+    },
+    {
+      "label": "Forrester：Microsoft の障害はベンダー集中リスクの解消とレジリエンスへの取り組みを迫る",
+      "url": "https://www.forrester.com/blogs/the-microsoft-outage-demands-an-end-to-vendor-concentration-risk-and-a-commitment-to-resilience/",
+      "kind": "press"
+    },
+    {
+      "label": "CIO Dive：Microsoft の障害と企業のレジリエンス",
+      "url": "https://www.ciodive.com/news/microsoft-outage-enterprise-resiliancy/874695/",
       "kind": "press"
     }
   ],
@@ -2378,6 +2394,10 @@
     {
       "t": "2026-11-26T05:25:00Z",
       "text": "定期確認。新しい公式発表・報道なし。新たな障害の報告もなし。内容の変更なし"
+    },
+    {
+      "t": "2026-11-26T06:25:00Z",
+      "text": "新しい公式発表なし。「世界の影響」に Gartner・Forrester のアナリストの見方（集中リスクとレジリエンス）を追加し、出典に 3 件追加"
     }
   ]
 }
